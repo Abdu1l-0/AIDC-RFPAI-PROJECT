@@ -1,0 +1,142 @@
+{
+  "": "attempt.schema.json",
+  "type": "object",
+  "required": [
+    "attempt_id",
+    "run_id",
+    "model_key",
+    "doc_id",
+    "repeat_idx",
+    "status",
+    "request",
+    "response",
+    "timings"
+  ],
+  "properties": {
+    "attempt_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "model_key": {
+      "type": "string"
+    },
+    "doc_id": {
+      "type": "string"
+    },
+    "repeat_idx": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "purpose": {
+      "enum": [
+        "primary",
+        "retry",
+        "repair_reask"
+      ],
+      "default": "primary"
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "timeout",
+        "rate_limited",
+        "server_error",
+        "context_exceeded",
+        "truncated",
+        "client_error"
+      ]
+    },
+    "request": {
+      "type": "object",
+      "required": [
+        "prompt_sha256",
+        "decoding"
+      ],
+      "properties": {
+        "prompt_sha256": {
+          "type": "string"
+        },
+        "decoding": {
+          "type": "object"
+        },
+        "param_support": {
+          "type": "object"
+        }
+      }
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "raw_text": {
+          "type": "string"
+        },
+        "finish_reason": {
+          "type": "string"
+        },
+        "model_id_returned": {
+          "type": "string"
+        },
+        "usage": {
+          "type": "object",
+          "properties": {
+            "prompt_tokens": {
+              "type": "integer"
+            },
+            "completion_tokens": {
+              "type": "integer"
+            },
+            "cached_prompt_tokens": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "provider_reported",
+                "locally_computed"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "timings": {
+      "type": "object",
+      "properties": {
+        "t_request_sent_utc": {
+          "type": "string"
+        },
+        "ms_to_first_token": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "ms_total": {
+          "type": "number"
+        },
+        "ms_network_baseline": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "retry_of": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "superseded_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

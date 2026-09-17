@@ -1,0 +1,9 @@
+{
+  "run_id": "run_1789630866_gpt-4o-mini",
+  "models": [
+    "gpt-4o-mini"
+  ],
+  "corpus_manifest_hash": "97083fe0f5dc43c4f74f7050af5d0f2e2c37c90187de5d9e5d0610c853d4c4e2",
+  "prompt_sha256": "99254a6a74caae9134639d3da55bf2348685da4f9429f468c23be12b5cb378f0",
+  "timestamp_utc": "2026-09-17T07:41:48Z"
+}
