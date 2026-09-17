@@ -1,0 +1,183 @@
+{
+  "attempt_id": "att_DOC_03",
+  "run_id": "run_1789630866_gpt-4o-mini",
+  "model_key": "gpt-4o-mini",
+  "doc_id": "DOC_03",
+  "repeat_idx": 0,
+  "status": "ok",
+  "request": {
+    "prompt_sha256": "2786f65524429133c9956a54cccbec779f207e0ee65239fb5bdc96297b9db1d5",
+    "decoding": {
+      "temperature": 0.0,
+      "max_tokens": 2048
+    }
+  },
+  "response": {
+    "raw_text": "{\n  \"F01\": {\n    \"status\": \"found\",\n    \"value\": \"May 28, 2026 2:00 PM local time\",\n    \"evidence\": [\n      {\n        \"quote\": \"Submission Deadline: May 28, 2026 2:00 PM local time\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F02\": {\n    \"status\": \"found\",\n    \"value\": \"May 21, 2026 4:00 PM local time\",\n    \"evidence\": [\n      {\n        \"quote\": \"Deadline for Questions: May 21, 2026 4:00 PM local time\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F03\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Joanne Bruneau-Carter, joabru@medicinehat.ca\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"For the purposes of this invitation, the RFP Contact is: Joanne Bruneau-Carter, joabru@medicinehat.ca\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F04\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"https://medicinehat.bidsandtenders.ca/\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Proposals must be submitted to the City\u2019s online bidding system portal at: https://medicinehat.bidsandtenders.ca/\",\n        \"page\": 5\n      }\n    ]\n  },\n  \"F05\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"initial_term\": \"5 years\",\n      \"renewal_options\": \"2 years\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"The term of the agreement is to be for a period of five (5) years, with an option in favour of the City to extend the agreement on the same terms and conditions annually for an additional two (2) years.\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F06\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"summary\": \"The City of Medicine Hat is seeking proposals from qualified vendors to provide a modern, user-friendly, and secure Corporate Learning Management System (LMS) to support corporate training, onboarding, compliance, safety, professional development, and certification tracking for employees, volunteers, and other external learners.\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"The City of Medicine Hat is seeking proposals from qualified vendors to provide a modern, user-friendly, and secure Corporate Learning Management System (LMS) to support corporate training, onboarding, compliance, safety, professional development, and certification tracking for employees, volunteers, and other external learners.\",\n        \"page\": 3\n      }\n    ]\n  },\n  \"F07\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Submission Form (Appendix B)\",\n      \"Pricing (Appendix C)\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Each proposal must include a Submission Form (Appendix B) completed and signed by an authorized representative of the proponent. Each proposal must include pricing information that complies with the instructions contained in Appendix C - Pricing.\",\n        \"page\": 21\n      }\n    ]\n  },\n  \"F08\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F09\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F10\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F11\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F12\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Commercial General Liability Insurance\",\n      \"Professional Errors and Omissions Liability Insurance\",\n      \"Cyber Liability Insurance\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"The Contractor shall maintain, in full force the following insurance: Commercial General Liability Insurance, Professional Errors and Omissions Liability Insurance, Cyber Liability Insurance.\",\n        \"page\": 22\n      }\n    ]\n  },\n  \"F13\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F14\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F15\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"SOC2\",\n      \"ISO\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Vendor Cybersecurity Compliance: Compliance with industry security best practices (SOC2, ISO, etc.)\",\n        \"page\": 32\n      }\n    ]\n  },\n  \"F16\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F17\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  }\n}",
+    "finish_reason": "stop",
+    "model_id_returned": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "prompt_tokens": 15004,
+      "completion_tokens": 1116,
+      "source": "provider_reported"
+    }
+  },
+  "timings": {
+    "ms_total": 7982.78,
+    "ms_to_first_token": null
+  },
+  "parsed": {
+    "repair_level": "none",
+    "extracted_fields": {
+      "F01": {
+        "status": "found",
+        "value": "May 28, 2026 2:00 PM local time",
+        "evidence": [
+          {
+            "quote": "Submission Deadline: May 28, 2026 2:00 PM local time",
+            "page": 4
+          }
+        ]
+      },
+      "F02": {
+        "status": "found",
+        "value": "May 21, 2026 4:00 PM local time",
+        "evidence": [
+          {
+            "quote": "Deadline for Questions: May 21, 2026 4:00 PM local time",
+            "page": 4
+          }
+        ]
+      },
+      "F03": {
+        "status": "found",
+        "value": [
+          "Joanne Bruneau-Carter, joabru@medicinehat.ca"
+        ],
+        "evidence": [
+          {
+            "quote": "For the purposes of this invitation, the RFP Contact is: Joanne Bruneau-Carter, joabru@medicinehat.ca",
+            "page": 4
+          }
+        ]
+      },
+      "F04": {
+        "status": "found",
+        "value": [
+          "https://medicinehat.bidsandtenders.ca/"
+        ],
+        "evidence": [
+          {
+            "quote": "Proposals must be submitted to the City\u2019s online bidding system portal at: https://medicinehat.bidsandtenders.ca/",
+            "page": 5
+          }
+        ]
+      },
+      "F05": {
+        "status": "found",
+        "value": {
+          "initial_term": "5 years",
+          "renewal_options": "2 years"
+        },
+        "evidence": [
+          {
+            "quote": "The term of the agreement is to be for a period of five (5) years, with an option in favour of the City to extend the agreement on the same terms and conditions annually for an additional two (2) years.",
+            "page": 4
+          }
+        ]
+      },
+      "F06": {
+        "status": "found",
+        "value": {
+          "summary": "The City of Medicine Hat is seeking proposals from qualified vendors to provide a modern, user-friendly, and secure Corporate Learning Management System (LMS) to support corporate training, onboarding, compliance, safety, professional development, and certification tracking for employees, volunteers, and other external learners."
+        },
+        "evidence": [
+          {
+            "quote": "The City of Medicine Hat is seeking proposals from qualified vendors to provide a modern, user-friendly, and secure Corporate Learning Management System (LMS) to support corporate training, onboarding, compliance, safety, professional development, and certification tracking for employees, volunteers, and other external learners.",
+            "page": 3
+          }
+        ]
+      },
+      "F07": {
+        "status": "found",
+        "value": [
+          "Submission Form (Appendix B)",
+          "Pricing (Appendix C)"
+        ],
+        "evidence": [
+          {
+            "quote": "Each proposal must include a Submission Form (Appendix B) completed and signed by an authorized representative of the proponent. Each proposal must include pricing information that complies with the instructions contained in Appendix C - Pricing.",
+            "page": 21
+          }
+        ]
+      },
+      "F08": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F09": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F10": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F11": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F12": {
+        "status": "found",
+        "value": [
+          "Commercial General Liability Insurance",
+          "Professional Errors and Omissions Liability Insurance",
+          "Cyber Liability Insurance"
+        ],
+        "evidence": [
+          {
+            "quote": "The Contractor shall maintain, in full force the following insurance: Commercial General Liability Insurance, Professional Errors and Omissions Liability Insurance, Cyber Liability Insurance.",
+            "page": 22
+          }
+        ]
+      },
+      "F13": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F14": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F15": {
+        "status": "found",
+        "value": [
+          "SOC2",
+          "ISO"
+        ],
+        "evidence": [
+          {
+            "quote": "Vendor Cybersecurity Compliance: Compliance with industry security best practices (SOC2, ISO, etc.)",
+            "page": 32
+          }
+        ]
+      },
+      "F16": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F17": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      }
+    }
+  }
+}

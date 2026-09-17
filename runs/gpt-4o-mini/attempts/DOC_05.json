@@ -1,0 +1,184 @@
+{
+  "attempt_id": "att_DOC_05",
+  "run_id": "run_1789630866_gpt-4o-mini",
+  "model_key": "gpt-4o-mini",
+  "doc_id": "DOC_05",
+  "repeat_idx": 0,
+  "status": "ok",
+  "request": {
+    "prompt_sha256": "99254a6a74caae9134639d3da55bf2348685da4f9429f468c23be12b5cb378f0",
+    "decoding": {
+      "temperature": 0.0,
+      "max_tokens": 2048
+    }
+  },
+  "response": {
+    "raw_text": "{\n  \"F01\": {\n    \"status\": \"found\",\n    \"value\": \"August 12, 2025\",\n    \"evidence\": [\n      {\n        \"quote\": \"Proposals due August 12, 2025\",\n        \"page\": 5\n      }\n    ]\n  },\n  \"F02\": {\n    \"status\": \"found\",\n    \"value\": \"July 25, 2025\",\n    \"evidence\": [\n      {\n        \"quote\": \"Written inquiries up to July 25, 2025\",\n        \"page\": 5\n      }\n    ]\n  },\n  \"F03\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Dennis Orellana\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Attention: Dennis Orellana  Procurement Services Lead\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F04\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"https://usask.bonfirehub.ca\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Proposals must be submitted through the online Bonfire Portal at: https://usask.bonfirehub.ca\",\n        \"page\": 6\n      }\n    ]\n  },\n  \"F05\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"initial_term\": \"5 years\",\n      \"renewal_options\": \"one additional three year and one additional two year extension\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"The term of Contract shall commence on or around September 1, 2025 and shall remain in effect until August 31, 2030\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F06\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"summary\": \"Provision and/or installation of Generative Artificial Intelligence (AI) Software\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"The University of Saskatchewan, as represented by Procurement, is requesting Proposals for the provision and/or installation of Generative Artificial Intelligence (AI) Software\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F07\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F08\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F09\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Technical & AI Platform Services\",\n      \"Optional Services\",\n      \"Professional Services\",\n      \"Proponent Qualifications\",\n      \"Support & Management\",\n      \"Cost\",\n      \"University Benefit & Sustainability\",\n      \"Indigenous Participation\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Proposals shall be evaluated based on the following criteria:\",\n        \"page\": 8\n      }\n    ]\n  },\n  \"F10\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F11\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"structure\": \"Pricing structure must be shown in Canadian dollars, Goods and Services Tax (GST) and Provincial Sales Tax (PST) excluded.\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"Pricing structure must be shown in Canadian dollars, Goods and Services Tax (GST) and Provincial Sales Tax (PST) excluded.\",\n        \"page\": 12\n      }\n    ]\n  },\n  \"F12\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F13\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F14\": {\n    \"status\": \"found\",\n    \"value\": 3,\n    \"evidence\": [\n      {\n        \"quote\": \"Provide a minimum of three (3) references for similar services\",\n        \"page\": 11\n      }\n    ]\n  },\n  \"F15\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F16\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F17\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  }\n}",
+    "finish_reason": "stop",
+    "model_id_returned": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "prompt_tokens": 18159,
+      "completion_tokens": 970,
+      "source": "provider_reported"
+    }
+  },
+  "timings": {
+    "ms_total": 6614.09,
+    "ms_to_first_token": null
+  },
+  "parsed": {
+    "repair_level": "none",
+    "extracted_fields": {
+      "F01": {
+        "status": "found",
+        "value": "August 12, 2025",
+        "evidence": [
+          {
+            "quote": "Proposals due August 12, 2025",
+            "page": 5
+          }
+        ]
+      },
+      "F02": {
+        "status": "found",
+        "value": "July 25, 2025",
+        "evidence": [
+          {
+            "quote": "Written inquiries up to July 25, 2025",
+            "page": 5
+          }
+        ]
+      },
+      "F03": {
+        "status": "found",
+        "value": [
+          "Dennis Orellana"
+        ],
+        "evidence": [
+          {
+            "quote": "Attention: Dennis Orellana  Procurement Services Lead",
+            "page": 4
+          }
+        ]
+      },
+      "F04": {
+        "status": "found",
+        "value": [
+          "https://usask.bonfirehub.ca"
+        ],
+        "evidence": [
+          {
+            "quote": "Proposals must be submitted through the online Bonfire Portal at: https://usask.bonfirehub.ca",
+            "page": 6
+          }
+        ]
+      },
+      "F05": {
+        "status": "found",
+        "value": {
+          "initial_term": "5 years",
+          "renewal_options": "one additional three year and one additional two year extension"
+        },
+        "evidence": [
+          {
+            "quote": "The term of Contract shall commence on or around September 1, 2025 and shall remain in effect until August 31, 2030",
+            "page": 4
+          }
+        ]
+      },
+      "F06": {
+        "status": "found",
+        "value": {
+          "summary": "Provision and/or installation of Generative Artificial Intelligence (AI) Software"
+        },
+        "evidence": [
+          {
+            "quote": "The University of Saskatchewan, as represented by Procurement, is requesting Proposals for the provision and/or installation of Generative Artificial Intelligence (AI) Software",
+            "page": 4
+          }
+        ]
+      },
+      "F07": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F08": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F09": {
+        "status": "found",
+        "value": [
+          "Technical & AI Platform Services",
+          "Optional Services",
+          "Professional Services",
+          "Proponent Qualifications",
+          "Support & Management",
+          "Cost",
+          "University Benefit & Sustainability",
+          "Indigenous Participation"
+        ],
+        "evidence": [
+          {
+            "quote": "Proposals shall be evaluated based on the following criteria:",
+            "page": 8
+          }
+        ]
+      },
+      "F10": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F11": {
+        "status": "found",
+        "value": {
+          "structure": "Pricing structure must be shown in Canadian dollars, Goods and Services Tax (GST) and Provincial Sales Tax (PST) excluded."
+        },
+        "evidence": [
+          {
+            "quote": "Pricing structure must be shown in Canadian dollars, Goods and Services Tax (GST) and Provincial Sales Tax (PST) excluded.",
+            "page": 12
+          }
+        ]
+      },
+      "F12": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F13": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F14": {
+        "status": "found",
+        "value": 3,
+        "evidence": [
+          {
+            "quote": "Provide a minimum of three (3) references for similar services",
+            "page": 11
+          }
+        ]
+      },
+      "F15": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F16": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F17": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      }
+    }
+  }
+}

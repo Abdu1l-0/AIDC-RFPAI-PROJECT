@@ -1,0 +1,222 @@
+{
+  "attempt_id": "att_DOC_04",
+  "run_id": "run_1789630866_gpt-4o-mini",
+  "model_key": "gpt-4o-mini",
+  "doc_id": "DOC_04",
+  "repeat_idx": 0,
+  "status": "ok",
+  "request": {
+    "prompt_sha256": "ed856b8e3d222fd299bcbdae9f61fa45c9490b72d2e04a6a30031400ab3bedc5",
+    "decoding": {
+      "temperature": 0.0,
+      "max_tokens": 2048
+    }
+  },
+  "response": {
+    "raw_text": "{\n  \"F01\": {\n    \"status\": \"found\",\n    \"value\": \"April 14, 2025 11:59:59 PM PST\",\n    \"evidence\": [\n      {\n        \"quote\": \"Submission Deadline: April 14, 2025 11:59:59 PM PST\",\n        \"page\": 1\n      }\n    ]\n  },\n  \"F02\": {\n    \"status\": \"found\",\n    \"value\": \"March 17, 2025 11:59:59 PM PST\",\n    \"evidence\": [\n      {\n        \"quote\": \"Deadline for Questions: March 17, 2025 11:59:59 PM PST\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F03\": {\n    \"status\": \"found\",\n    \"value\": [\n      {\n        \"name\": \"Jeremy Elliott\",\n        \"email\": \"procurement@cowichantribes.com\"\n      }\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"For the purposes of this procurement process, the \u201cRFP Contact\u201d will be: Jeremy Elliott procurement@cowichantribes.com\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F04\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"BCBid platform\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Proposals are to be submitted directly through the BCBid platform where the RFP is posted.\",\n        \"page\": 6\n      }\n    ]\n  },\n  \"F05\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"initial_term\": \"5 years\",\n      \"renewal_options\": \"option in favour of Cowichan Tribes to extend the agreement on the same terms and conditions\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"The term of the licensing and support agreement is to be for a period of five years, with an option in favour of Cowichan Tribes to extend the agreement on the same terms and conditions.\",\n        \"page\": 5\n      }\n    ]\n  },\n  \"F06\": {\n    \"status\": \"found\",\n    \"value\": \"cloud-based ERP system(s) to enhance operational efficiency across key functions including finance, procurement, human resources, payroll, and asset management.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Cowichan Tribes is seeking to procure a cloud-based ERP system(s) to enhance operational efficiency across key functions including finance, procurement, human resources, payroll, and asset management.\",\n        \"page\": 3\n      }\n    ]\n  },\n  \"F07\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Completed Submission Form in PDF format\",\n      \"Completed Narrative Response in PDF format\",\n      \"Completed Pricing Excel Workbook\",\n      \"Completed Requirements Excel Workbook\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Each Proposal must also consist of the following components: 1. The Proposal must be received by the Submission Deadline... 3. A completed Submission Form in PDF format... 4. A completed Narrative Response in PDF format... 5. A completed Pricing Excel Workbook... 6. A completed Requirements Excel Workbook.\",\n        \"page\": 22\n      }\n    ]\n  },\n  \"F08\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Support for organizations operating in Canada including support for Canadian taxes and Canadian Payroll.\",\n      \"Vendor has experience implementing solutions for First Nations in Canada.\",\n      \"The solution must be hosted in Canada and stores all data within Canada.\",\n      \"Implementation vendor(s) can demonstrate they have at least five years' experience implementing Finance, HR, Payroll, and Asset Management solutions.\",\n      \"Solution is cloud based.\",\n      \"The solutions are SOC2 Type 2 compliant or equivalent.\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"The following sets out the mandatory technical requirements of the proponent and the proposed solution: 1. Support for organizations operating in Canada including support for Canadian taxes and Canadian Payroll. 2. Vendor has experience implementing solutions for First Nations in Canada. 3. The solution must be hosted in Canada and stores all data within Canada. 4. Implementation vendor(s) can demonstrate they have at least five years' experience implementing Finance, HR, Payroll, and Asset Management solutions. 5. Solution is cloud based. 6. The solutions are SOC2 Type 2 compliant or equivalent.\",\n        \"page\": 22\n      }\n    ]\n  },\n  \"F09\": {\n    \"status\": \"found\",\n    \"value\": [\n      {\n        \"category\": \"Functional Fit (Requirements Worksheet)\",\n        \"weight\": 35,\n        \"threshold\": 28\n      },\n      {\n        \"category\": \"Narrative Proposal\",\n        \"weight\": 20,\n        \"threshold\": 14\n      },\n      {\n        \"category\": \"Pricing\",\n        \"weight\": 15,\n        \"threshold\": 10.5\n      },\n      {\n        \"category\": \"Vendor Demonstration\",\n        \"weight\": 30,\n        \"threshold\": 21\n      }\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"The following sets out the categories, weightings, and descriptions of the rated criteria of the RFP.\",\n        \"page\": 23\n      }\n    ]\n  },\n  \"F10\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"minimum_score\": 80,\n      \"evaluation_stage\": \"Stage III\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"To advance, a proposal must score at least 80% for functional fit.\",\n        \"page\": 7\n      }\n    ]\n  },\n  \"F11\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F12\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F13\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F14\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F15\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F16\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F17\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"requirement\": \"Vendors selected for the demonstration stage will be required to present their proposed solutions.\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"Vendors selected for the demonstration stage will be required to present their proposed solutions in accordance with the demo script that will be provided by Cowichan Tribes.\",\n        \"page\": 8\n      }\n    ]\n  }\n}",
+    "finish_reason": "stop",
+    "model_id_returned": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "prompt_tokens": 13329,
+      "completion_tokens": 1494,
+      "source": "provider_reported"
+    }
+  },
+  "timings": {
+    "ms_total": 10323.05,
+    "ms_to_first_token": null
+  },
+  "parsed": {
+    "repair_level": "none",
+    "extracted_fields": {
+      "F01": {
+        "status": "found",
+        "value": "April 14, 2025 11:59:59 PM PST",
+        "evidence": [
+          {
+            "quote": "Submission Deadline: April 14, 2025 11:59:59 PM PST",
+            "page": 1
+          }
+        ]
+      },
+      "F02": {
+        "status": "found",
+        "value": "March 17, 2025 11:59:59 PM PST",
+        "evidence": [
+          {
+            "quote": "Deadline for Questions: March 17, 2025 11:59:59 PM PST",
+            "page": 4
+          }
+        ]
+      },
+      "F03": {
+        "status": "found",
+        "value": [
+          {
+            "name": "Jeremy Elliott",
+            "email": "procurement@cowichantribes.com"
+          }
+        ],
+        "evidence": [
+          {
+            "quote": "For the purposes of this procurement process, the \u201cRFP Contact\u201d will be: Jeremy Elliott procurement@cowichantribes.com",
+            "page": 4
+          }
+        ]
+      },
+      "F04": {
+        "status": "found",
+        "value": [
+          "BCBid platform"
+        ],
+        "evidence": [
+          {
+            "quote": "Proposals are to be submitted directly through the BCBid platform where the RFP is posted.",
+            "page": 6
+          }
+        ]
+      },
+      "F05": {
+        "status": "found",
+        "value": {
+          "initial_term": "5 years",
+          "renewal_options": "option in favour of Cowichan Tribes to extend the agreement on the same terms and conditions"
+        },
+        "evidence": [
+          {
+            "quote": "The term of the licensing and support agreement is to be for a period of five years, with an option in favour of Cowichan Tribes to extend the agreement on the same terms and conditions.",
+            "page": 5
+          }
+        ]
+      },
+      "F06": {
+        "status": "found",
+        "value": "cloud-based ERP system(s) to enhance operational efficiency across key functions including finance, procurement, human resources, payroll, and asset management.",
+        "evidence": [
+          {
+            "quote": "Cowichan Tribes is seeking to procure a cloud-based ERP system(s) to enhance operational efficiency across key functions including finance, procurement, human resources, payroll, and asset management.",
+            "page": 3
+          }
+        ]
+      },
+      "F07": {
+        "status": "found",
+        "value": [
+          "Completed Submission Form in PDF format",
+          "Completed Narrative Response in PDF format",
+          "Completed Pricing Excel Workbook",
+          "Completed Requirements Excel Workbook"
+        ],
+        "evidence": [
+          {
+            "quote": "Each Proposal must also consist of the following components: 1. The Proposal must be received by the Submission Deadline... 3. A completed Submission Form in PDF format... 4. A completed Narrative Response in PDF format... 5. A completed Pricing Excel Workbook... 6. A completed Requirements Excel Workbook.",
+            "page": 22
+          }
+        ]
+      },
+      "F08": {
+        "status": "found",
+        "value": [
+          "Support for organizations operating in Canada including support for Canadian taxes and Canadian Payroll.",
+          "Vendor has experience implementing solutions for First Nations in Canada.",
+          "The solution must be hosted in Canada and stores all data within Canada.",
+          "Implementation vendor(s) can demonstrate they have at least five years' experience implementing Finance, HR, Payroll, and Asset Management solutions.",
+          "Solution is cloud based.",
+          "The solutions are SOC2 Type 2 compliant or equivalent."
+        ],
+        "evidence": [
+          {
+            "quote": "The following sets out the mandatory technical requirements of the proponent and the proposed solution: 1. Support for organizations operating in Canada including support for Canadian taxes and Canadian Payroll. 2. Vendor has experience implementing solutions for First Nations in Canada. 3. The solution must be hosted in Canada and stores all data within Canada. 4. Implementation vendor(s) can demonstrate they have at least five years' experience implementing Finance, HR, Payroll, and Asset Management solutions. 5. Solution is cloud based. 6. The solutions are SOC2 Type 2 compliant or equivalent.",
+            "page": 22
+          }
+        ]
+      },
+      "F09": {
+        "status": "found",
+        "value": [
+          {
+            "category": "Functional Fit (Requirements Worksheet)",
+            "weight": 35,
+            "threshold": 28
+          },
+          {
+            "category": "Narrative Proposal",
+            "weight": 20,
+            "threshold": 14
+          },
+          {
+            "category": "Pricing",
+            "weight": 15,
+            "threshold": 10.5
+          },
+          {
+            "category": "Vendor Demonstration",
+            "weight": 30,
+            "threshold": 21
+          }
+        ],
+        "evidence": [
+          {
+            "quote": "The following sets out the categories, weightings, and descriptions of the rated criteria of the RFP.",
+            "page": 23
+          }
+        ]
+      },
+      "F10": {
+        "status": "found",
+        "value": {
+          "minimum_score": 80,
+          "evaluation_stage": "Stage III"
+        },
+        "evidence": [
+          {
+            "quote": "To advance, a proposal must score at least 80% for functional fit.",
+            "page": 7
+          }
+        ]
+      },
+      "F11": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F12": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F13": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F14": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F15": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F16": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F17": {
+        "status": "found",
+        "value": {
+          "requirement": "Vendors selected for the demonstration stage will be required to present their proposed solutions."
+        },
+        "evidence": [
+          {
+            "quote": "Vendors selected for the demonstration stage will be required to present their proposed solutions in accordance with the demo script that will be provided by Cowichan Tribes.",
+            "page": 8
+          }
+        ]
+      }
+    }
+  }
+}
