@@ -30,6 +30,14 @@ _DATASET_SIZES = {"eval_5_docs": 5, "eval_full": 50}
 # Fake extracted field values
 # ---------------------------------------------------------------------------
 
+def _cell(value, display, quote=None, page=1) -> dict:
+    """One field cell in the shape the middleware returns."""
+    if value is None:
+        return {"status": "not_stated", "value": None, "display": "Not found", "evidence": []}
+    evidence = [{"quote": quote, "page": page}] if quote else []
+    return {"status": "found", "value": value, "display": display, "evidence": evidence}
+
+
 def _fields_for(model: str) -> dict:
     """Return a full set of 17 fields for one model.
 
@@ -87,8 +95,23 @@ def _fields_for(model: str) -> dict:
         base["insurance_requirements"] = None
         base["data_security_requirements"] = None
 
-    # Make sure every key exists (any missing key -> None).
-    return {key: base.get(key) for key in FIELD_KEYS}
+    # Wrap every value in the {status, value, display, evidence} cell shape
+    # the middleware returns. Any missing key becomes "not found".
+    out = {}
+    for key in FIELD_KEYS:
+        raw = base.get(key)
+        if raw is None:
+            out[key] = _cell(None, None)
+            continue
+        if isinstance(raw, list):
+            display = "\n".join(
+                f"- {i.get('category')}: {i.get('points')} points" if isinstance(i, dict) else f"- {i}"
+                for i in raw
+            )
+        else:
+            display = str(raw)
+        out[key] = _cell(raw, display, quote=f"(fake quote for {key})")
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -101,6 +124,21 @@ def health() -> dict:
         "status": "ok",
         "models": {"model_a": "ok", "model_b": "ok", "model_c": "ok"},
     }
+
+
+def list_models() -> list[dict]:
+    """GET /models"""
+    return [
+        {"id": "model_a", "label": "Model A (qwen-7b, vLLM)", "enabled": False},
+        {"id": "model_b", "label": "Model B (gpt-4o-mini, OpenAI)", "enabled": True},
+        {"id": "model_c", "label": "Model C (qwen-14b, vLLM)", "enabled": False},
+    ]
+
+
+def list_fields() -> list[dict]:
+    """GET /fields"""
+    from fields import FIELDS as _F
+    return [{"key": key, "label": label, "description": ""} for key, label, _shape in _F]
 
 
 def upload_document(filename: str) -> dict:

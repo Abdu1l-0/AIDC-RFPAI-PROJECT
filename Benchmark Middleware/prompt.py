@@ -2,28 +2,27 @@ import json
 import hashlib
 from pathlib import Path
 
+from fields import FIELDS
+
 PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "extraction_prompt.txt"
-FIELD_SET_PATH = Path(__file__).resolve().parent.parent / "config" / "field_set@1.0.json"
 
 
 def build_messages(doc_text: str) -> dict:
     """Build the chat messages for extraction.
 
     Loads the fixed system instructions from prompts/extraction_prompt.txt,
-    combines them with the field list (from config/field_set@1.0.json)
-    and the document text, to build the messages sent to each model.
+    combines them with the field list (from fields.py, which re-keys
+    config/field_set@1.0.json by readable name) and the document text,
+    to build the messages sent to each model.
 
     Returns: {"messages": [...], "prompt_sha256": "..."}
     """
     with open(PROMPT_PATH, "r", encoding="utf-8") as f:
         system_inst = f.read().strip()
 
-    with open(FIELD_SET_PATH, "r", encoding="utf-8") as f:
-        field_set = json.load(f)
-
     fields_guide = []
-    for fid, fdef in field_set["fields"].items():
-        fields_guide.append(f"{fid}: {fdef['name']} - {fdef['description']} (Type: {fdef['type']})")
+    for name, fdef in FIELDS.items():
+        fields_guide.append(f"{name}: {fdef['name']} - {fdef['description']} (Type: {fdef['type']})")
 
     user_prompt = (
         "FIELDS TO EXTRACT:\n" + "\n".join(fields_guide) + "\n\n"

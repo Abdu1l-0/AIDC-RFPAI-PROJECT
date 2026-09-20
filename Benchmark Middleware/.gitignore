@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 data/text/*.txt
 data/
+
+# The RFP PDFs stay on the team drive, never in git.
+# The ground truth answers in eval_set/ground_truth/ ARE committed.
+eval_set/documents/

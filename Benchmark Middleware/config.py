@@ -1,6 +1,11 @@
-from pydantic_settings import BaseSettings
-from pydantic import Field
+import os
 from typing import Dict
+
+from pydantic import Field
+from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class Settings(BaseSettings):
@@ -31,9 +36,23 @@ class Settings(BaseSettings):
         "qwen-14b": 0.0,
     })
 
+    # Which models are ready to call. Model A and C are the self-hosted vLLM
+    # endpoints; turn them on in .env once they are deployed.
+    model_a_enabled: bool = Field(default=False)
+    model_b_enabled: bool = Field(default=True)
+    model_c_enabled: bool = Field(default=False)
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+        # .env also holds OPENAI_API_KEY and other keys this model does not
+        # declare; ignore them instead of failing to start.
+        extra = "ignore"
 
 
 settings = Settings()
+
+# Convenience: if MODEL_B_API_KEY is not set, fall back to the standard
+# OPENAI_API_KEY, so the .env only needs the one key.
+if not settings.model_b_api_key:
+    settings.model_b_api_key = os.getenv("OPENAI_API_KEY", "")

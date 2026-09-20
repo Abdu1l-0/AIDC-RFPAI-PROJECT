@@ -25,8 +25,9 @@ load_dotenv()
 MIDDLEWARE_URL = os.getenv("MIDDLEWARE_URL", "http://localhost:8000")
 USE_FAKE_DATA = os.getenv("USE_FAKE_DATA", "true").lower() == "true"
 
-# One shared timeout. Extract/benchmark calls can be slow.
-_TIMEOUT = httpx.Timeout(130.0)
+# One shared timeout. Extract calls run several models, each up to ~90 s with
+# one retry, so this has to be longer than the middleware's worst case.
+_TIMEOUT = httpx.Timeout(300.0)
 
 
 class ApiError(Exception):
@@ -65,6 +66,20 @@ def health() -> dict:
     if USE_FAKE_DATA:
         return fake_data.health()
     return _get("/health")
+
+
+def list_models() -> list[dict]:
+    """The 3 models with their labels and whether they are ready to call."""
+    if USE_FAKE_DATA:
+        return fake_data.list_models()
+    return _get("/models")
+
+
+def list_fields() -> list[dict]:
+    """The 17 fields, in order, with their labels."""
+    if USE_FAKE_DATA:
+        return fake_data.list_fields()
+    return _get("/fields")
 
 
 # ---------------------------------------------------------------------------

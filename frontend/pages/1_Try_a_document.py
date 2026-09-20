@@ -14,6 +14,28 @@ from fields import MODELS
 st.set_page_config(page_title="Try a document", page_icon="📄", layout="wide")
 st.title("Try a document")
 
+
+@st.cache_data(ttl=60)
+def _catalog():
+    """Models and field labels, straight from the middleware.
+
+    Falls back to the built-in list if the middleware cannot be reached, so
+    the page still renders instead of crashing.
+    """
+    try:
+        models = api.list_models()
+    except api.ApiError:
+        models = [{"id": m["id"], "label": m["label"], "enabled": True} for m in MODELS]
+    try:
+        field_list = api.list_fields()
+    except api.ApiError:
+        field_list = None
+    return models, field_list
+
+
+models_info, field_list = _catalog()
+model_labels = {m["id"]: m["label"] for m in models_info}
+
 # ---------------------------------------------------------------------------
 # 1. Upload a PDF (uploaded only once per file)
 # ---------------------------------------------------------------------------
@@ -58,9 +80,11 @@ st.divider()
 st.subheader("Models")
 
 chosen = []
-cols = st.columns(len(MODELS))
-for col, model in zip(cols, MODELS):
-    if col.checkbox(model["label"], value=True, key=f"pick_{model['id']}"):
+cols = st.columns(len(models_info))
+for col, model in zip(cols, models_info):
+    ready = model.get("enabled", True)
+    label = model["label"] if ready else f"{model['label']} — not ready"
+    if col.checkbox(label, value=ready, disabled=not ready, key=f"pick_{model['id']}"):
         chosen.append(model["id"])
 
 run = st.button("Extract", type="primary", disabled=(doc_info is None or not chosen))
@@ -84,8 +108,8 @@ if result and doc_info and result.get("doc_id") == doc_info["doc_id"]:
     status_cols = st.columns(len(result["results"]))
     for col, item in zip(status_cols, result["results"]):
         with col:
-            ui.render_model_status(item)
+            ui.render_model_status(item, model_labels)
 
     st.divider()
     st.subheader("Extracted fields")
-    ui.render_field_grid(result["results"])
+    ui.render_field_grid(result["results"], field_list, model_labels)

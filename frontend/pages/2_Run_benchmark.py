@@ -28,11 +28,18 @@ except api.ApiError as exc:
 
 dataset = st.selectbox("Dataset", datasets)
 
+try:
+    models_info = api.list_models()
+except api.ApiError:
+    models_info = [{"id": m["id"], "label": m["label"], "enabled": True} for m in MODELS]
+
 st.write("Models")
 chosen = []
-cols = st.columns(len(MODELS))
-for col, model in zip(cols, MODELS):
-    if col.checkbox(model["label"], value=True, key=f"bench_{model['id']}"):
+cols = st.columns(len(models_info))
+for col, model in zip(cols, models_info):
+    ready = model.get("enabled", True)
+    label = model["label"] if ready else f"{model['label']} — not ready"
+    if col.checkbox(label, value=ready, disabled=not ready, key=f"bench_{model['id']}"):
         chosen.append(model["id"])
 
 if st.button("Start", type="primary", disabled=not chosen):

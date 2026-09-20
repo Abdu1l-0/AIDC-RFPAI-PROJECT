@@ -22,39 +22,33 @@ def status_badge(status: str) -> str:
     return f"{emoji} {text}"
 
 
-def value_to_markdown(shape: str, value) -> str:
-    """Turn one field value into markdown text, based on its shape."""
-    if value is None or value == "" or value == []:
+def cell_to_markdown(cell) -> str:
+    """Turn one field cell into markdown.
+
+    The middleware already formats the value into a "display" string, so the
+    frontend never has to know a field's internal shape.
+    """
+    if not isinstance(cell, dict):
         return "_Not found_"
 
-    if shape == "str":
-        return str(value)
+    if cell.get("status") != "found":
+        return "_Not found_"
 
-    if shape == "list":
-        if isinstance(value, list):
-            return "\n".join(f"- {item}" for item in value)
-        return str(value)
+    text = cell.get("display")
+    if not text:
+        # middleware did not send a display string: fall back to the raw value
+        value = cell.get("value")
+        if value is None or value == [] or value == {}:
+            return "_Not found_"
+        text = str(value)
 
-    if shape == "criteria":
-        # list of {category, points} -> a small markdown table
-        if isinstance(value, list) and value:
-            rows = ["| Category | Points |", "| --- | --- |"]
-            for item in value:
-                if isinstance(item, dict):
-                    cat = item.get("category", "")
-                    pts = item.get("points", "")
-                    rows.append(f"| {cat} | {pts} |")
-                else:
-                    rows.append(f"| {item} |  |")
-            return "\n".join(rows)
-        return str(value)
-
-    return str(value)
+    return str(text)
 
 
-def render_model_status(result: dict) -> None:
+def render_model_status(result: dict, model_labels: dict | None = None) -> None:
     """One compact status block for a single model result."""
-    st.markdown(f"**{MODEL_LABELS.get(result['model'], result['model'])}**")
+    labels = {**MODEL_LABELS, **(model_labels or {})}
+    st.markdown(f"**{labels.get(result['model'], result['model'])}**")
     st.write(status_badge(result.get("status", "")))
 
     cols = st.columns(3)
@@ -67,11 +61,21 @@ def render_model_status(result: dict) -> None:
         st.error(result["error"])
 
 
-def render_field_grid(results: list[dict]) -> None:
+def render_field_grid(results: list[dict], field_list: list[dict] | None = None,
+                      model_labels: dict | None = None, show_evidence: bool = True) -> None:
     """Show one row per field, one column per model, so answers line up.
 
-    `results` is the list from POST /extract (one item per model).
+    `results`    is the list from POST /extract (one item per model).
+    `field_list` is [{key, label}, ...] from GET /fields; falls back to the
+                 built-in list when the middleware cannot be reached.
     """
+    if field_list:
+        rows = [(f["key"], f.get("label", f["key"])) for f in field_list]
+    else:
+        rows = [(key, label) for key, label, _shape in FIELDS]
+
+    labels = {**MODEL_LABELS, **(model_labels or {})}
+
     # Map model -> fields dict (may be None on failure).
     fields_by_model = {r["model"]: (r.get("fields") or {}) for r in results}
     models = [r["model"] for r in results]
@@ -81,16 +85,24 @@ def render_field_grid(results: list[dict]) -> None:
     header = st.columns(weights)
     header[0].markdown("**Field**")
     for i, model in enumerate(models):
-        header[i + 1].markdown(f"**{MODEL_LABELS.get(model, model)}**")
+        header[i + 1].markdown(f"**{labels.get(model, model)}**")
 
     st.divider()
 
-    for key, label, shape in FIELDS:
+    for key, label in rows:
         row = st.columns(weights)
         row[0].markdown(f"**{label}**")
         for i, model in enumerate(models):
-            value = fields_by_model.get(model, {}).get(key)
-            row[i + 1].markdown(value_to_markdown(shape, value))
+            cell = fields_by_model.get(model, {}).get(key)
+            with row[i + 1]:
+                st.markdown(cell_to_markdown(cell))
+                evidence = (cell or {}).get("evidence") if isinstance(cell, dict) else None
+                if show_evidence and evidence:
+                    with st.expander(f"Evidence ({len(evidence)})"):
+                        for ev in evidence:
+                            page = ev.get("page")
+                            page_text = f" _(page {page})_" if page else ""
+                            st.markdown(f"> {ev.get('quote', '')}{page_text}")
         st.divider()
 
 
