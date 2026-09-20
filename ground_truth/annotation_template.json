@@ -1,0 +1,113 @@
+{
+  "document_id": "DOC_01",
+  "annotator_name": "",
+  "fields": {
+    "F01": {
+      "status": "",
+      "value": {"date": null, "time": null, "tz_raw": null},
+      "evidence": [],
+      "search_record": []
+    },
+    "F02": {
+      "status": "",
+      "value": {"date": null, "time": null, "tz_raw": null},
+      "evidence": [],
+      "search_record": []
+    },
+    "F03": {
+      "status": "",
+      "value": [],
+      "evidence": [],
+      "search_record": []
+    },
+    "F04": {
+      "status": "",
+      "value": [],
+      "evidence": [],
+      "search_record": []
+    },
+    "F05": {
+      "status": "",
+      "value": {
+        "base_length": null,
+        "base_unit": null,
+        "renewals": [],
+        "total_max_years": null
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "F06": {
+      "status": "",
+      "value": {"summary": "", "key_deliverables": []},
+      "evidence": [],
+      "search_record": []
+    },
+    "F07": {
+      "status": "",
+      "value": [],
+      "evidence": [],
+      "search_record": []
+    },
+    "F08": {
+      "status": "",
+      "value": [],
+      "evidence": [],
+      "search_record": []
+    },
+    "F09": {
+      "status": "",
+      "value": [],
+      "evidence": [],
+      "search_record": []
+    },
+    "F10": {
+      "status": "",
+      "value": {"value": null, "unit": null, "applies_to": null},
+      "evidence": [],
+      "search_record": []
+    },
+    "F11": {
+      "status": "",
+      "value": {"pricing_model": "", "submission_requirements": []},
+      "evidence": [],
+      "search_record": []
+    },
+    "F12": {
+      "status": "",
+      "value": [],
+      "evidence": [],
+      "search_record": []
+    },
+    "F13": {
+      "status": "",
+      "value": [],
+      "evidence": [],
+      "search_record": []
+    },
+    "F14": {
+      "status": "",
+      "value": null,
+      "evidence": [],
+      "search_record": []
+    },
+    "F15": {
+      "status": "",
+      "value": [],
+      "evidence": [],
+      "search_record": []
+    },
+    "F16": {
+      "status": "",
+      "value": {"required": null, "location": null, "detail": null},
+      "evidence": [],
+      "search_record": []
+    },
+    "F17": {
+      "status": "",
+      "value": {"required": null, "stage": null, "detail": null},
+      "evidence": [],
+      "search_record": []
+    }
+  }
+}
