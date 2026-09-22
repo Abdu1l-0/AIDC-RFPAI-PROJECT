@@ -7,19 +7,36 @@ from display import add_display
 from llm_client import call_model, MODEL_CONFIG
 from loader import detect_language, ensure_text
 from validate import parse_model_output
-from storage import save_result
+from storage import save_raw, save_result
 from scoring import load_ground_truth, score_document
+from logger import get_logger
+
+log = get_logger()
 
 
 async def _run_one_model(doc_id: str, model_key: str, text: str) -> dict:
     """Call one model, validate its output, score it if ground truth
     exists, save the result, return it."""
-    raw_result = await asyncio.to_thread(call_model, model_key, text)
+    raw_result = await asyncio.to_thread(call_model, model_key, text, doc_id)
+
+    # Keep the answer exactly as it came back, before parsing can fail on it.
+    raw_path = None
+    if raw_result.get("raw_text") is not None:
+        raw_path = save_raw(doc_id, model_key, raw_result["raw_text"])
 
     if raw_result["status"] == "ok":
         parsed = parse_model_output(raw_result["raw_text"])
     else:
         parsed = {"valid": False, "fields": None, "error": raw_result["error"]}
+
+    if raw_result["status"] == "ok":
+        found = 0
+        if parsed["fields"] is not None:
+            found = sum(1 for cell in parsed["fields"].model_dump().values()
+                        if cell and cell.get("status") == "found")
+        log.info("   model=%s doc=%s parsed valid_json=%s found=%d/17%s",
+                 model_key, doc_id, parsed["valid"], found,
+                 "" if parsed["valid"] else f" error={(parsed.get('error') or '')[:160]}")
 
     score = None
     score_detail = None
@@ -46,7 +63,14 @@ async def _run_one_model(doc_id: str, model_key: str, text: str) -> dict:
         "error": raw_result["error"] or parsed.get("error"),
         "schema_mode": raw_result.get("schema_mode"),
         "finish_reason": raw_result.get("finish_reason"),
+        "prompt_variant": raw_result.get("prompt_variant"),
+        # the model's answer exactly as it came back, for the UI and debugging
+        "raw_text": raw_result.get("raw_text"),
+        "raw_path": raw_path.relative_to(storage.BASE_DIR).as_posix() if raw_path else None,
     }
+
+    if score is not None:
+        log.info("   model=%s doc=%s score=%.3f", model_key, doc_id, score)
 
     save_result(doc_id, model_key, result)
     return result
@@ -107,8 +131,11 @@ async def run_benchmark(run_id: str, dataset: str, models: list[str]) -> None:
 
     try:
         documents = storage.dataset_documents(dataset)
-        for doc in documents:
+        log.info("run=%s started dataset=%s models=%s documents=%d",
+                 run_id, dataset, ",".join(models), len(documents))
+        for index, doc in enumerate(documents, start=1):
             doc_id = doc["doc_id"]
+            log.info("run=%s document %d/%d: %s", run_id, index, len(documents), doc_id)
             manifest["current_doc"] = doc_id
             storage.save_run_manifest(run_id, manifest)
 
@@ -134,7 +161,11 @@ async def run_benchmark(run_id: str, dataset: str, models: list[str]) -> None:
     except Exception as exc:  # a broken run must still report, not hang
         manifest["status"] = "failed"
         manifest["error"] = f"{type(exc).__name__}: {exc}"
+        log.exception("run=%s failed", run_id)
     finally:
         manifest["current_doc"] = None
         manifest["finished_at"] = _now()
         storage.save_run_manifest(run_id, manifest)
+        log.info("run=%s finished status=%s done=%s/%s errors=%s",
+                 run_id, manifest.get("status"), manifest.get("done"),
+                 manifest.get("total"), manifest.get("errors"))

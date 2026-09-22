@@ -1,0 +1,326 @@
+{
+  "document_id": "AB-2025-02456-RFP #25-004ERP Requirements Analysis and Readiness Review_Final (1)",
+  "fields": {
+    "submission_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2025-05-14",
+        "time": "14:00",
+        "tz_raw": "MST Alberta Time"
+      },
+      "evidence": [
+        {
+          "quote": "Submission Deadline: May 14, 2025, 2.00 PM MST Alberta Time",
+          "page": 1
+        }
+      ],
+      "search_record": []
+    },
+    "questions_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2025-04-17",
+        "time": "14:00",
+        "tz_raw": "MST"
+      },
+      "evidence": [
+        {
+          "quote": "Deadline for Questions April 17, 2025, 2 PM MST",
+          "page": 4
+        }
+      ],
+      "search_record": []
+    },
+    "rfp_contact": {
+      "status": "found",
+      "value": [
+        {
+          "name": "Indra Ghosh",
+          "email": "PublicBids@rockyview.ca",
+          "title": "Supervisor of Purchasing and Treasury",
+          "phone": null
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "For the purposes of this procurement process, the “RFP Contact” will be Indra Ghosh, Supervisor of Purchasing and Treasury. PublicBids@rockyview.ca",
+          "page": 4
+        }
+      ],
+      "search_record": []
+    },
+    "submission_method": {
+      "status": "found",
+      "value": [
+        {
+          "method": "email",
+          "portal_name": null,
+          "url": "PublicBids@rockyview.ca"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Proposals must be addressed to: Purchasing Department Rocky View County Attention: Indra Ghosh, Email: PublicBids@rockyview.ca",
+          "page": 5
+        }
+      ],
+      "search_record": []
+    },
+    "contract_term": {
+      "status": "found",
+      "value": {
+        "base_length": 1,
+        "base_unit": "years",
+        "renewals": [
+          {
+            "count": 2,
+            "length": 1,
+            "unit": "years"
+          }
+        ],
+        "total_max_years": 3
+      },
+      "evidence": [
+        {
+          "quote": "The agreement resulting from this RFP shall be in effect from the date of official acceptance by the County until December 31, 2025, subject to the following: (a) When mutually agreeable between the County and the successful proponent, this agreement may be renewed under the same terms and conditions for a period of up to one (1) additional year and said option to renew this agreement for an additional one (1) year period, shall be in effect for each year thereafter for a total period not to exceed three (3) years.",
+          "page": 4
+        }
+      ],
+      "search_record": []
+    },
+    "scope_of_deliverables": {
+      "status": "found",
+      "value": {
+        "summary": "Conduct a comprehensive Enterprise Resource Planning (ERP) Requirements Analysis and Readiness Review, develop an RFP scope of work document for open market bidding, and serve as an advisor for the ERP evaluation and selection process.",
+        "key_deliverables": [
+          "Phase 1: ERP Requirements Analysis and Readiness Review (by Dec 31, 2025)",
+          "Organizational readiness, technological capabilities, and data management review",
+          "Cloud readiness assessment, data residency analysis, and SWOC analysis",
+          "Market Intelligence Report detailing ERP solutions, modules, and price points",
+          "Phase 2: Development of Request for Proposal (RFP) for ERP Solution (by Feb 02, 2026)",
+          "Detailed scope of work, functional/technical specifications, and pricing matrix",
+          "Phase 3: ERP Vendor Evaluation and Selection Process (by May 29, 2026)",
+          "Proposal review, compatibility assessment, reference checks, and demo facilitation",
+          "Attendance at minimum six (6) in-person project meetings"
+        ]
+      },
+      "evidence": [
+        {
+          "quote": "To pursue this goal, the County is seeking proposals from experienced and qualified consultants to conduct a comprehensive Enterprise Resource Planning (ERP) Requirements Analysis and Readiness Review, followed by the development of a Request for Proposal (RFP) document (Scope of work) in collaboration with the County’s appointed project team members, and to serve as an advisor for the ERP evaluation and selection process.",
+          "page": 20
+        }
+      ],
+      "search_record": []
+    },
+    "mandatory_submission_requirements": {
+      "status": "found",
+      "value": [
+        "Completed and signed Submission Form (Appendix B)",
+        "Completed Pricing Schedule (Appendix C / Section F) submitted as a separate digital file",
+        "Completed Mandatory Evaluation Table (Section B.3) with all 'Yes' answers",
+        "Person-Hour Schedule detailing estimated hours by phase without pricing details",
+        "Signed Independent Contractor Agreement and Non-Disclosure Agreement (NDA)",
+        "Confirmation of receipt of all RFP Addenda",
+        "Proposals submitted in PDF format via email to PublicBids@rockyview.ca by deadline",
+        "Proposals in English only"
+      ],
+      "evidence": [
+        {
+          "quote": "Proponents are instructed to complete the Submission Form set out in Appendix B of this RFP and include it in their proposal submission. B.2 Pricing Proponents are instructed to complete the Pricing Schedule as set out in Section F of Appendix D",
+          "page": 29
+        },
+        {
+          "quote": "Proponents are instructed to complete and submit the Mandatory Evaluation Table below for their proposal... Any ‘No’ answers within the table will result in automatic disqualification",
+          "page": 29
+        }
+      ],
+      "search_record": []
+    },
+    "mandatory_technical_requirements": {
+      "status": "found",
+      "value": [
+        "Pass all criteria in Mandatory Evaluation Table: Understanding of Scope, Proposed Methodology, Proposed Schedule, Proposed Team Credentials, Previous Similar Work, Budgetary Control within 10% variance, Insurance Certificate and References",
+        "Attend at least six (6) in-person meetings with Project Team, Leadership, and County Council",
+        "Designate a dedicated Lead Project Manager committed for the duration of the project with binding authority"
+      ],
+      "evidence": [
+        {
+          "quote": "Mandatory Evaluation Table: Understanding of Scope... Proposed Methodology... Proposed Schedule... Proposed Team... Previous Similar Work... Budgetary Control: Within the estimated With 10% variance... All required Insurance and Documents and References",
+          "page": 29
+        },
+        {
+          "quote": "At a minimum, the successful Consultant must be prepared for and attend at least six (6) in-person meetings",
+          "page": 27
+        }
+      ],
+      "search_record": []
+    },
+    "evaluation_criteria": {
+      "status": "found",
+      "value": [
+        {
+          "criterion": "Proponent's Experience and Qualifications",
+          "weight": 10,
+          "unit": "percent"
+        },
+        {
+          "criterion": "Service Team Qualifications and Experience",
+          "weight": 25,
+          "unit": "percent"
+        },
+        {
+          "criterion": "Client References and Past Experience",
+          "weight": 10,
+          "unit": "percent"
+        },
+        {
+          "criterion": "Work Plan, Methodology, and Quality Assurance",
+          "weight": 30,
+          "unit": "percent"
+        },
+        {
+          "criterion": "Pricing",
+          "weight": 25,
+          "unit": "percent"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "The table below sets out the categories, weightings, and descriptions of the rated criteria of the RFP: PROPONENT’S EXPERIENCE AND QUALIFICATIONS (10%)... SERVICE TEAM QUALIFICATIONS AND EXPERIENCE (25%)... CLIENT REFERENCES AND PAST EXPERIENCE (10%)... WORK PLAN, METHODOLOGY, AND QUALITY ASSURANCE (30%)... PRICING (25%)",
+          "page": 30
+        }
+      ],
+      "search_record": []
+    },
+    "minimum_score_threshold": {
+      "status": "not_stated",
+      "value": null,
+      "evidence": [],
+      "search_record": []
+    },
+    "pricing_structure": {
+      "status": "found",
+      "value": {
+        "pricing_model": "Task-Fee Schedule showing Unit Price ($/hr CAD) and Lump-sum price structure per project phase, submitted as a separate digital file",
+        "submission_requirements": [
+          "Completed Pricing Schedule (Appendix C / Section F)",
+          "Rates in Canadian ($) funds, inclusive of all duties, taxes, travel, overhead, and expenses except sales taxes itemized separately",
+          "Person-Hour Schedule detailing estimated hours by phase (without pricing)",
+          "Hourly Rate Schedule and Miscellaneous Cost Schedule for additional meetings/services"
+        ]
+      },
+      "evidence": [
+        {
+          "quote": "The Proponent shall provide a TASK-FEE SCHEDULE (Unit price and Lump-sum price structure) showing the following, at a minimum: (a) Proposed Professional Fees (PER PROJECT PHASE)... (b) Estimated expenses/disbursements for each phase of the project.",
+          "page": 35
+        },
+        {
+          "quote": "Rates must be provided in Canadian ($) funds, inclusive of all applicable duties and taxes except for applicable sales taxes, which should be itemized separately.",
+          "page": 19
+        }
+      ],
+      "search_record": []
+    },
+    "insurance_requirements": {
+      "status": "not_stated",
+      "value": null,
+      "evidence": [],
+      "search_record": []
+    },
+    "vendor_experience": {
+      "status": "found",
+      "value": [
+        {
+          "requirement_type": "Project Manager experience",
+          "years": 5,
+          "detail": "Minimum of five (5) years of experience on ERP-related projects, having led a minimum of two (2) ERP projects from readiness assessment through to implementation within the last seven (7) years; PMP/PMI certification preferred"
+        },
+        {
+          "requirement_type": "Team member experience",
+          "years": 3,
+          "detail": "Project team members must have a minimum of three (3) years of experience on ERP-related projects from readiness assessment through to implementation within the last seven (7) years"
+        },
+        {
+          "requirement_type": "Firm municipal ERP experience",
+          "years": null,
+          "detail": "Qualifications relative to providing ERP consulting services within a municipal environment for commercial ERP systems such as Oracle, SAP, Microsoft Dynamics, etc."
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "The Proponent’s appointed Project Manager (and back-up Project Manager) shall have a minimum of five (5) years of experience on ERP-related projects, with demonstrated experience in having led a minimum of two (2) ERP projects from readiness assessment through to implementation within the last seven (7) year period.",
+          "page": 32
+        },
+        {
+          "quote": "Project team members must have a minimum of three (3) years of experience on ERP-related projects, with demonstrated experience in readiness assessment through to implementation within the last seven (7) year period.",
+          "page": 32
+        }
+      ],
+      "search_record": []
+    },
+    "references_required": {
+      "status": "found",
+      "value": 3,
+      "evidence": [
+        {
+          "quote": "Proponents shall provide a MINIMUM OF THREE (3) (preferably PUBLIC SECTOR) client references for whom they have provided SIMILAR/ IDENTICAL SERVICES WITHIN THE LAST SEVEN (7) YEARS.",
+          "page": 33
+        }
+      ],
+      "search_record": []
+    },
+    "data_security_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "standard": "Non-Disclosure Agreement",
+          "detail": "Execution of mandatory County Non-Disclosure Agreement (NDA #1.pdf)"
+        },
+        {
+          "standard": "Security protocols review",
+          "detail": "Assess data management practices, data governance, quality, and security protocols"
+        },
+        {
+          "standard": "Cloud security assessment",
+          "detail": "Evaluate security measures and compliance requirements for cloud data storage and transmission"
+        },
+        {
+          "standard": "Quality Assurance",
+          "detail": "Quality assurance (QA) processes with third-party certification (ISO 9001, ISO 14001)"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "the selected proponent shall complete and sign the Independent Contractor Agreement... and a Non-Disclosure Agreement Separately Uploaded in the APC",
+          "page": 15
+        },
+        {
+          "quote": "Security Protocols: Define the security protocols and measures necessary to safeguard sensitive information stored within the ERP system. This encompasses role-based access controls, data encryption, audit trails, and compliance with data protection regulations.",
+          "page": 24
+        }
+      ],
+      "search_record": []
+    },
+    "data_residency": {
+      "status": "not_stated",
+      "value": null,
+      "evidence": [],
+      "search_record": []
+    },
+    "demo_required": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "stage": "2nd level interview and presentation",
+        "detail": "After completion of initial review, 2nd level evaluation may be conducted through presentation and interview for all or shortlisted proponents."
+      },
+      "evidence": [
+        {
+          "quote": "After completion of the initial review, the 2nd level evaluation may be conducted through presentation and Interview. If required Rocky View County’s evaluation team may call all the proponents or shortlisted proponents for 2nd level interview.",
+          "page": 7
+        }
+      ],
+      "search_record": []
+    }
+  }
+}

@@ -10,6 +10,7 @@ load_dotenv()
 
 import storage
 from fields import FIELDS
+from method import build_method
 from loader import load_pdf
 from runner import new_run_id, run_benchmark, run_document, start_manifest
 from llm_client import MODEL_CONFIG, enabled_models, ping_model
@@ -170,6 +171,16 @@ async def start_run(request: BenchmarkRequest):
     start_manifest(run_id, request.dataset, models, total=len(documents) * len(models))
     asyncio.create_task(run_benchmark(run_id, request.dataset, models))
     return {"run_id": run_id}
+
+
+@app.get("/benchmark/method")
+def benchmark_method():
+    """How every benchmark number is calculated, in plain words.
+
+    Built from the live code values (thresholds, prices, each model's setup),
+    so the explanation always matches what the benchmark actually computes.
+    """
+    return build_method()
 
 
 @app.get("/benchmark/runs")

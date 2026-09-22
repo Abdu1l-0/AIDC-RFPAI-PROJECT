@@ -1,0 +1,393 @@
+{
+  "document_id": "City of Medicine Hat - LMS tender",
+  "fields": {
+    "submission_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2026-05-28",
+        "time": "14:00",
+        "tz_raw": "local time"
+      },
+      "evidence": [
+        {
+          "quote": "Submission Deadline: May 28, 2026 2:00 PM local time",
+          "page": 1
+        }
+      ],
+      "search_record": []
+    },
+    "questions_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2026-05-21",
+        "time": "16:00",
+        "tz_raw": "local time"
+      },
+      "evidence": [
+        {
+          "quote": "Deadline for Questions May 21, 2026 4:00 PM local time",
+          "page": 4
+        }
+      ],
+      "search_record": []
+    },
+    "rfp_contact": {
+      "status": "found",
+      "value": [
+        {
+          "name": "Joanne Bruneau-Carter",
+          "email": "joabru@medicinehat.ca",
+          "title": null,
+          "phone": null
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "For the purposes of this invitation, the RFP Contact is: Joanne Bruneau-Carter, joabru@medicinehat.ca",
+          "page": 4
+        }
+      ],
+      "search_record": []
+    },
+    "submission_method": {
+      "status": "found",
+      "value": [
+        {
+          "method": "portal",
+          "portal_name": "bids&tenders",
+          "url": "https://medicinehat.bidsandtenders.ca/Module"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Proposals must be submitted to the City’s online bidding system portal at: https://medicinehat.bidsandtenders.ca/Module",
+          "page": 5
+        }
+      ],
+      "search_record": []
+    },
+    "contract_term": {
+      "status": "found",
+      "value": {
+        "base_length": 5,
+        "base_unit": "years",
+        "renewals": [
+          {
+            "count": 2,
+            "length": 1,
+            "unit": "years"
+          }
+        ],
+        "total_max_years": 7
+      },
+      "evidence": [
+        {
+          "quote": "The term of the agreement is to be for a period of five (5) years, with an option in favour of the City to extend the agreement on the same terms and conditions annually for an additional two (2) years.",
+          "page": 4
+        }
+      ],
+      "search_record": []
+    },
+    "scope_of_deliverables": {
+      "status": "found",
+      "value": {
+        "summary": "Provide a modern, user-friendly, and secure Corporate Learning Management System (LMS) available 24/7 supporting approximately 1,500 employees, volunteers, and external learners across City departments for corporate training, onboarding, compliance, safety, professional development, and certification tracking.",
+        "key_deliverables": [
+          "Centralize learning delivery and records (including compliance-related training)",
+          "Support blended learning (self-paced eLearning, virtual instructor-led, and classroom)",
+          "Course development platform supporting SCORM 1.2/2004, xAPI (Tin Can), video, PDF, and web content",
+          "Robust analytics, dashboards, and compliance reporting with API-based data access",
+          "Integration with Microsoft 365 (Azure AD SSO, Teams, SharePoint) and Unit4 ERP/HRIS/Finance",
+          "External user management for temporary staff, volunteers, contractors, and external agencies",
+          "Data migration of users and organization hierarchy with mapping templates",
+          "Admin, instructor, manager, and learner training with editable materials",
+          "System integration testing (SIT) and user acceptance testing (UAT)",
+          "Cutover plan, rollback criteria, and hypercare support for at least 30 days post go-live",
+          "24/7 customer support with defined SLAs and 99.9% uptime"
+        ]
+      },
+      "evidence": [
+        {
+          "quote": "The City of Medicine Hat (“the City”) is seeking proposals from qualified vendors to provide a modern, user-friendly, and secure Corporate Learning Management System (LMS) to support corporate training, onboarding, compliance, safety, professional development, and certification tracking for employees, volunteers, and other external learners.",
+          "page": 3
+        }
+      ],
+      "search_record": []
+    },
+    "mandatory_submission_requirements": {
+      "status": "found",
+      "value": [
+        "Completed and signed Submission Form (Appendix B, 3 pages)",
+        "Completed Proposal Compensation Form / Pricing Sheet (Appendix C)",
+        "Vendor's software agreement included with proposal for review",
+        "Transmittal Letter briefly stating understanding of purpose, objectives, and benefits",
+        "Proponent Qualifications, Resumes, and Relevant Experience",
+        "Acknowledgement and confirmation of receipt of any RFP Addenda",
+        "Assumptions section listing all assumptions about information/arrangements provided by the City",
+        "Letters of reference from past clients confirming scope and performance",
+        "One (1) PDF copy submitted electronically through bids&tenders before closing time",
+        "Proposals in English only"
+      ],
+      "evidence": [
+        {
+          "quote": "Each proposal must include a Submission Form (Appendix B) completed and signed by an authorized representative of the proponent. 2. Pricing (Appendix C)",
+          "page": 21
+        },
+        {
+          "quote": "Submit one (1) PDF copy of the proposal, clearly identified with the RFP number, title and the name of the Proponent.",
+          "page": 6
+        }
+      ],
+      "search_record": []
+    },
+    "mandatory_technical_requirements": {
+      "status": "found",
+      "value": [
+        "Achieve a minimum technical score of 35 out of 50 points on Stage 1 Technical Capability (Appendix E) to meet the technical threshold",
+        "Support course development standards: SCORM 1.2/2004, xAPI (Tin Can), video, PDF, and web content (optional: AICC, cmi5)",
+        "Bidirectional integration and data sync with Microsoft 365 (Azure AD SSO, Teams, SharePoint) and Unit4 ERP/HRIS and Finance System",
+        "Single Sign-On (SSO) and/or Multi-Factor Authentication (MFA)",
+        "24/7 customer support services with defined SLAs and 99.9% uptime",
+        "Role-Based Access Control (RBAC) and compliance tracking with audit-ready records"
+      ],
+      "evidence": [
+        {
+          "quote": "Proponents must achieve a minimum technical score of 35 out of 50 points to meet the technical threshold.",
+          "page": 24
+        },
+        {
+          "quote": "Course development platform standards & formats: Support SCORM 1.2/2004, xAPI (Tin Can), video, PDF, and web content.",
+          "page": 31
+        }
+      ],
+      "search_record": []
+    },
+    "evaluation_criteria": {
+      "status": "found",
+      "value": [
+        {
+          "criterion": "Technical Capability (Appendix E) – Initial Evaluation",
+          "weight": 50,
+          "unit": "points"
+        },
+        {
+          "criterion": "Vendor Experience & References",
+          "weight": 15,
+          "unit": "points"
+        },
+        {
+          "criterion": "Implementation & Support",
+          "weight": 20,
+          "unit": "points"
+        },
+        {
+          "criterion": "Pricing (Appendix C)",
+          "weight": 15,
+          "unit": "points"
+        },
+        {
+          "criterion": "Product Demonstration (Stage 2: User Management 10, Functionality Alignment 10, Technical & Integration 10)",
+          "weight": 30,
+          "unit": "points"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "In Stage 1, all proposals will be evaluated against the rated criteria for a subtotal of 100 points, including a technical component worth 50 points... Stage 2 demonstrations will be scored out of 30 points and added to the Stage 1 scores to determine the final ranking (Total = 130 points).",
+          "page": 24
+        }
+      ],
+      "search_record": []
+    },
+    "minimum_score_threshold": {
+      "status": "found",
+      "value": {
+        "value": 35,
+        "unit": "points",
+        "applies_to": "Stage 1 Technical Capability (Appendix E)"
+      },
+      "evidence": [
+        {
+          "quote": "Proponents must achieve a minimum technical score of 35 out of 50 points to meet the technical threshold.",
+          "page": 24
+        }
+      ],
+      "search_record": []
+    },
+    "pricing_structure": {
+      "status": "found",
+      "value": {
+        "pricing_model": "Fixed price / unit rates in Canadian Dollars (CAD), exclusive of GST, all-inclusive of labour, materials, travel, insurance, delivery, and setup",
+        "submission_requirements": [
+          "Completed Proposal Form (Appendix C) with itemized one-time implementation costs separated from annual recurring costs",
+          "5-year pricing schedule (Year 1 through Year 5)",
+          "Software Licensing broken out into initial license fee, annual maintenance, admin license fee (per user), user license fee (per user)",
+          "Itemized categories for Implementation & System Configuration, Security & Integration, Training & Documentation, Service & Support, Maintenance Support, and Optional Features/Modules"
+        ]
+      },
+      "evidence": [
+        {
+          "quote": "All prices must be in Canadian Dollars (CAD), exclusive of GST. Proponents must clearly separate one-time implementation costs from annual recurring costs.",
+          "page": 27
+        }
+      ],
+      "search_record": []
+    },
+    "insurance_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "coverage_type": "Commercial General Liability",
+          "amount": 2000000,
+          "currency": "CAD",
+          "basis": "per_occurrence"
+        },
+        {
+          "coverage_type": "Professional Errors and Omissions Liability",
+          "amount": 1000000,
+          "currency": "CAD",
+          "basis": "unspecified"
+        },
+        {
+          "coverage_type": "Cyber Liability Insurance",
+          "amount": 2000000,
+          "currency": "CAD",
+          "basis": "per_occurrence"
+        },
+        {
+          "coverage_type": "Automobile Liability Insurance",
+          "amount": 2000000,
+          "currency": "CAD",
+          "basis": "per_occurrence"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Commercial General Liability Insurance... Not less than Two Million Dollars ($2,000,000.00) per occurrence with a property damage deductible not exceeding Two Thousand Five Hundred ($2,500.00) Dollars.",
+          "page": 22
+        },
+        {
+          "quote": "Professional Errors and Omissions Liability Insurance... policy limits of not less than One Million Dollars ($1,000,000.00) per claim with a 12-month maintenance period... and with an aggregate limit of not less than $2,000,000.",
+          "page": 22
+        },
+        {
+          "quote": "Cyber Liability Insurance, where applicable... for a minimum of $2,000,000 per occurrence",
+          "page": 23
+        }
+      ],
+      "search_record": []
+    },
+    "vendor_experience": {
+      "status": "found",
+      "value": [
+        {
+          "requirement_type": "Relevant LMS experience",
+          "years": null,
+          "detail": "Years providing LMS service, LMS implementations, and municipal/government implementations"
+        },
+        {
+          "requirement_type": "References timeframe",
+          "years": 5,
+          "detail": "References similar in scope & size over the last 5 years (minimum of 3)"
+        },
+        {
+          "requirement_type": "Team qualifications",
+          "years": null,
+          "detail": "Roles and responsibilities – both implementation & support teams' resumes that will be assigned to this project"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Relevant LMS experience: years providing this service, implementations, Municipal/government implementations, references similar in scope & size over last 5 years (minimum of 3), roles & responsibilities – both the implementation & support teams’ resumes that will be assigned to this project.",
+          "page": 25
+        }
+      ],
+      "search_record": []
+    },
+    "references_required": {
+      "status": "found",
+      "value": 3,
+      "evidence": [
+        {
+          "quote": "references similar in scope & size over last 5 years (minimum of 3)",
+          "page": 25
+        }
+      ],
+      "search_record": []
+    },
+    "data_security_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "standard": "Cybersecurity compliance",
+          "detail": "Compliance with industry security best practices (SOC2, ISO, etc.)"
+        },
+        {
+          "standard": "PIPA",
+          "detail": "Compliance with Alberta Personal Information Protection Act (PIPA); vendor server preferred within Canada"
+        },
+        {
+          "standard": "Encryption",
+          "detail": "Sensitive data encrypted both at rest and in transit"
+        },
+        {
+          "standard": "Authentication",
+          "detail": "Single Sign On (SSO) and/or Multi-Factor Authentication (MFA)"
+        },
+        {
+          "standard": "Operational security",
+          "detail": "Documented Incident Response Plan, Business Continuity and Disaster Recovery (BCP/DR) plan, and vulnerability management"
+        },
+        {
+          "standard": "Pre-condition of award",
+          "detail": "Satisfactory completion of City IT Cybersecurity Vendor Assessment (CVA) questionnaire"
+        }
+      ],
+      "evidence": [
+        {
+          "quote": "Vendor Cybersecurity Compliance: Compliance with industry security best practices (SOC2, ISO, etc.)",
+          "page": 31
+        },
+        {
+          "quote": "Cybersecurity Vendor Assessment (CVA) - a process executed by our Information Technology (IT) department to perform a technical assessment of your product and information security practices.",
+          "page": 24
+        }
+      ],
+      "search_record": []
+    },
+    "data_residency": {
+      "status": "found",
+      "value": {
+        "required": false,
+        "location": "Canada",
+        "detail": "Vendor server preferred within Canada to comply with PIPA; flexible options for cloud storage in Canada or on-premises storage"
+      },
+      "evidence": [
+        {
+          "quote": "PIPA Compliance: Vendor server preferred within Canada to comply with PIPA.",
+          "page": 31
+        },
+        {
+          "quote": "Data Storage: Option for cloud storage in Canada or on-premises storage.",
+          "page": 32
+        }
+      ],
+      "search_record": []
+    },
+    "demo_required": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "stage": "Stage 2 Product Demonstration",
+        "detail": "The top-ranked proponents meeting the 35/50 technical threshold (up to a maximum of six) may be invited to participate in Stage 2 Product Demonstration, scored out of 30 points (User Management & Experience 10, Functionality Alignment 10, Technical & Integration 10)."
+      },
+      "evidence": [
+        {
+          "quote": "The top-ranked proponents that meet the technical threshold, up to a maximum of six, may be invited to participate in Stage 2, at the City’s discretion. Stage 2 will consist of a product demonstration. Stage 2 demonstrations will be scored out of 30 points",
+          "page": 24
+        }
+      ],
+      "search_record": []
+    }
+  }
+}

@@ -42,6 +42,27 @@ class Settings(BaseSettings):
     model_b_enabled: bool = Field(default=True)
     model_c_enabled: bool = Field(default=False)
 
+    # How each endpoint is told to answer in our JSON schema:
+    #   json_schema  OpenAI style response_format (OpenAI enforces this)
+    #   guided_json  vLLM's own guided decoding (vLLM enforces this)
+    #   json_object  only "must be valid JSON", no shape
+    #   none         nothing sent; the prompt has to carry it
+    # Tested on our vLLM (2026-09-21):
+    #   json_schema  accepted but silently IGNORED
+    #   guided_json  works on tiny schemas, but its only grammar backend
+    #                (outlines) hangs on our 17-field schema with a real RFP
+    # So vLLM models use "none": the prompt spells out every value shape
+    # (prompt.py), and validate.py checks the answer. The mode used is saved
+    # with every result, so the report can state it.
+    model_a_schema_mode: str = Field(default="none")
+    model_b_schema_mode: str = Field(default="json_schema")
+    model_c_schema_mode: str = Field(default="none")
+
+    # Print every model endpoint's full HTTP response body to the log.
+    # The full response is always saved to data/raw/ either way; this only
+    # controls the log. Turn off when running big benchmarks (it is long).
+    log_full_response: bool = Field(default=True)
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
