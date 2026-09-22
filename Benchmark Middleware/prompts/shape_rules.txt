@@ -1,0 +1,3 @@
+5. "value" MUST follow the shape shown under "answer as" for that field exactly: same keys, same nesting, lists where a list is shown. Never collapse a structured value into one string. Use null for any part the document does not state.
+6. Never return a list or object filled with nulls: an absent field is always "value": null.
+7. Every one of the 17 keys MUST map to an object with exactly "status", "value" and "evidence" - including fields whose value is a list.

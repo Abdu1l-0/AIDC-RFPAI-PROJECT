@@ -132,6 +132,17 @@ def start_run(dataset: str, models: list[str]) -> dict:
     return _post("/benchmark/runs", json={"dataset": dataset, "models": models})
 
 
+def get_method() -> dict | None:
+    """How every benchmark number is calculated (GET /benchmark/method).
+
+    Built by the middleware from its live code values. Not available on fake
+    data: returns None, and the page shows the numbers without explanations.
+    """
+    if USE_FAKE_DATA:
+        return None
+    return _get("/benchmark/method")
+
+
 def get_run(run_id: str) -> dict:
     if USE_FAKE_DATA:
         return fake_data.get_run(run_id)

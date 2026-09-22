@@ -1,0 +1,296 @@
+{
+  "document_id": "RFP CP-730126 Generative AI RFP (4)",
+  "fields": {
+    "submission_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2025-08-12",
+        "time": null,
+        "tz_raw": null
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "questions_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2025-07-25",
+        "time": null,
+        "tz_raw": null
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "rfp_contact": {
+      "status": "found",
+      "value": [
+        {
+          "name": "Dennis Orellana",
+          "email": null,
+          "title": "Procurement Services Lead",
+          "phone": null
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "submission_method": {
+      "status": "found",
+      "value": [
+        {
+          "method": "portal",
+          "portal_name": "Bonfire Portal",
+          "url": "https://usask.bonfirehub.ca"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "contract_term": {
+      "status": "found",
+      "value": {
+        "base_length": 5,
+        "base_unit": "years",
+        "renewals": [
+          {
+            "count": 1,
+            "length": 3,
+            "unit": "years"
+          },
+          {
+            "count": 1,
+            "length": 2,
+            "unit": "years"
+          }
+        ],
+        "total_max_years": 10
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "scope_of_deliverables": {
+      "status": "found",
+      "value": {
+        "summary": "Establish multiple non-exclusive master service agreements with pre-qualified suppliers who directly provide generative AI platform services on an as-needed basis, consolidating ad-hoc AI subscriptions into a managed AI environment.",
+        "key_deliverables": [
+          "AI Chat and Data Analysis Services",
+          "AI Model Customization and Integration (agents, MCP, fine-tuning, AI APIs)",
+          "AI Consulting Services",
+          "AI Enabling Infrastructure (virtual machines, PaaS, serverless functions, graph and vector databases)",
+          "Compliance with intellectual property and privacy regulations",
+          "Infrastructure protection",
+          "Security and data protection",
+          "Integration and user management (SSO, account management, role and access provisioning, user enrolment)",
+          "Flexible agreement options (enterprise management with individual subscriptions, volume licensing with tiered pricing)",
+          "Onboarding of existing USask subscribers to a USask Enterprise/Education Agreement",
+          "Training",
+          "Customer support, service and maintenance"
+        ]
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_submission_requirements": {
+      "status": "found",
+      "value": [
+        "Proposal must be submitted through the Bonfire Portal before the Closing Time; submissions by other methods will not be accepted and late proposals will be rejected",
+        "Proponent must be the direct provider of the services; proposals from third-party resellers, intermediaries or distributors will not be considered",
+        "Proposal must be dated and signed in the firm or corporate name by an officer or agent authorized to execute contracts; evidence of authority must accompany proposals signed by an agent",
+        "Completed USask SaaS Vendor Form (Appendix E) or HECVAT must be provided with the proposal",
+        "Minimum of three (3) references for similar services",
+        "Potential conflicts of interest must be identified; non-disclosure may disqualify the proposal",
+        "Mandatory contractual provisions (marked **) cannot be modified; any objection to preferred contractual provisions must be set out in the proposal, otherwise they are deemed accepted"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_technical_requirements": {
+      "status": "found",
+      "value": [
+        "Must comply with applicable IP and privacy regulations, including the Copyright Act (Canada), PIPEDA, LA FOIP (Saskatchewan) and, where applicable, HIPA (Saskatchewan)",
+        "Proponent must be directly responsible for protecting the infrastructure (hardware, software, networking, facilities) that runs the proposed AI platform services",
+        "Must meet or exceed USask security requirements, demonstrating data protection strategies such as encryption, regular security audits and industry best practices",
+        "Must provide acceptable options for authorization and authentication integration, including Single Sign-On (SSO), user account management, role and access provisioning, and enrolment of USask users"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "evaluation_criteria": {
+      "status": "found",
+      "value": [
+        {
+          "criterion": "Technical & AI Platform Services",
+          "weight": 30,
+          "unit": "points"
+        },
+        {
+          "criterion": "Optional Services",
+          "weight": 5,
+          "unit": "points"
+        },
+        {
+          "criterion": "Professional Services",
+          "weight": 5,
+          "unit": "points"
+        },
+        {
+          "criterion": "Proponent Qualifications",
+          "weight": 10,
+          "unit": "points"
+        },
+        {
+          "criterion": "Support & Management",
+          "weight": 10,
+          "unit": "points"
+        },
+        {
+          "criterion": "Cost",
+          "weight": 30,
+          "unit": "points"
+        },
+        {
+          "criterion": "University Benefit & Sustainability",
+          "weight": 5,
+          "unit": "points"
+        },
+        {
+          "criterion": "Indigenous Participation",
+          "weight": 5,
+          "unit": "points"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "minimum_score_threshold": {
+      "status": "not_stated",
+      "value": null,
+      "evidence": [],
+      "search_record": []
+    },
+    "pricing_structure": {
+      "status": "found",
+      "value": {
+        "pricing_model": "Pricing in Canadian dollars, GST and PST excluded, DDP Incoterms 2010; pricing firm for five (5) years, with later increases limited to substantiated cost changes and not greater than CPI",
+        "submission_requirements": [
+          "Completed pricing structure in electronic format (Appendix D) for Years 1 to 5 covering individual subscription per year, token-based pricing model, enterprise management per year, implementation, training and additional/other costs",
+          "Detailed breakdown of price per user subscription and indication of volume discounts based on number of users",
+          "Usage examples of average monthly token consumption per user, and details of any extra cost or throttling past token or usage thresholds",
+          "Optional extension year pricing for Years 6 to 10",
+          "Tiered pricing model (if applicable)",
+          "Optional service and support fees as hourly rates by role, with explanations and assumptions",
+          "Costs inclusive of duty, pricing formulae, installation charges, maintenance fees, upgrades, training and value added benefits; taxes shown separately"
+        ]
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "insurance_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "coverage_type": "Commercial General Liability",
+          "amount": 5000000,
+          "currency": "CAD",
+          "basis": "per_occurrence"
+        },
+        {
+          "coverage_type": "Cybersecurity Liability",
+          "amount": 5000000,
+          "currency": "CAD",
+          "basis": "per_occurrence"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "vendor_experience": {
+      "status": "found",
+      "value": [
+        {
+          "requirement_type": "Company experience",
+          "years": null,
+          "detail": "No minimum years specified. Complete description of the duration and extent of company experience, competence and reliability in handling similar projects, and how long the proponent has been involved in the generative AI software market"
+        },
+        {
+          "requirement_type": "Sector experience",
+          "years": null,
+          "detail": "Examples of successfully handling requests from Higher Educational Institutions; demonstrated ability to work in a large university environment or organization of similar complexity"
+        },
+        {
+          "requirement_type": "Staff qualifications",
+          "years": null,
+          "detail": "List of proposed personnel with job function, title, qualifications and experience; team background in generative AI and related fields"
+        },
+        {
+          "requirement_type": "Corporate structure",
+          "years": null,
+          "detail": "Outline of corporate structure and ownership, names of all owners and/or officers, and a company organizational chart"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "references_required": {
+      "status": "found",
+      "value": 3,
+      "evidence": [],
+      "search_record": []
+    },
+    "data_security_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "standard": "LA FOIP",
+          "detail": "Compliance with The Local Authority Freedom of Information and Protection of Privacy Act (Saskatchewan); Service Provider acknowledged as an Information Management Service Provider (IMSP) under subsections 23.2(3) and 23.2(4)"
+        },
+        {
+          "standard": "PIPEDA",
+          "detail": "Compliance with the Personal Information Protection and Electronic Documents Act (Canada)"
+        },
+        {
+          "standard": "HIPA",
+          "detail": "Compliance with The Health Information Protection Act (Saskatchewan), where applicable"
+        },
+        {
+          "standard": "HECVAT",
+          "detail": "Completed USask SaaS Vendor Form or Higher Education Community Vendor Assessment Toolkit (HECVAT)"
+        },
+        {
+          "standard": "SSO",
+          "detail": "Single Sign-On support; supported standards (CAS, Shib, SAMLv2, etc.) to be stated"
+        },
+        {
+          "standard": "Data security standards",
+          "detail": "Comprehensive data protection strategies including encryption, regular security audits and compliance with industry best practices"
+        },
+        {
+          "standard": "Breach notification",
+          "detail": "Immediately notify USask of unauthorized access, use or disclosure of personal information; personal information returned or destroyed on request and destroyed at contract completion"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "data_residency": {
+      "status": "found",
+      "value": {
+        "required": false,
+        "location": null,
+        "detail": "No data residency requirement stated. The SaaS Vendor Form asks whether the proponent can restrict the jurisdiction where university data is stored, and where its data centres are located and who hosts them."
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "demo_required": {
+      "status": "found",
+      "value": {
+        "required": false,
+        "stage": "Post-closing evaluation (at USask's discretion)",
+        "detail": "Proponents may be contacted after RFP closing for presentations to clarify proposals, product demonstrations and/or an inspection of operations; this may or may not be requested. Costs are borne by the proponent."
+      },
+      "evidence": [],
+      "search_record": []
+    }
+  }
+}

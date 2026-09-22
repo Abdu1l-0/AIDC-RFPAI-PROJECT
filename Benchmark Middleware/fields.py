@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 FIELD_SET_PATH = Path(__file__).resolve().parent / "field_set.json"
 
@@ -166,3 +167,43 @@ def build_json_schema() -> dict:
 
 
 JSON_SCHEMA = build_json_schema()
+
+
+# ---------------------------------------------------------------------------
+# Value shapes in plain text, for the prompt
+# ---------------------------------------------------------------------------
+# Constrained decoding is not available on every endpoint (our vLLM's grammar
+# backend hangs on this schema), so the prompt itself must spell out the exact
+# shape of every value. Every model gets the same prompt, which also keeps the
+# comparison fair.
+
+def _shape(schema: dict) -> Any:
+    """A compact example of one value's shape, e.g. {"date": "YYYY-MM-DD"}."""
+    types = schema.get("type")
+    types = types if isinstance(types, list) else [types]
+    real = [t for t in types if t != "null"]
+    nullable = "null" in types
+
+    if "enum" in schema:
+        options = [e for e in schema["enum"] if e is not None]
+        leaf = " | ".join(str(o) for o in options)
+    elif "object" in real and "properties" in schema:
+        return {k: _shape(v) for k, v in schema["properties"].items()}
+    elif "array" in real:
+        return [_shape(schema.get("items", {}))]
+    elif "integer" in real:
+        leaf = "integer"
+    elif "number" in real:
+        leaf = "number"
+    elif "boolean" in real:
+        leaf = "true | false"
+    else:
+        leaf = schema.get("description") or "string"
+
+    return f"{leaf} | null" if nullable else leaf
+
+
+def value_shape(name: str) -> str:
+    """The shape of one field's value, as one line of JSON."""
+    value_schema = JSON_SCHEMA["properties"][name]["properties"]["value"]
+    return json.dumps(_shape(value_schema), ensure_ascii=False)

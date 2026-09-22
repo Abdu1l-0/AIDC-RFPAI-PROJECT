@@ -202,6 +202,23 @@ def compare_list(field: str, pred: list, gold: list) -> float:
         return 1.0
     if not gold or not pred:
         return 0.0
+    precision, recall = list_precision_recall(field, pred, gold)
+    if precision + recall == 0:
+        return 0.0
+    return 2 * precision * recall / (precision + recall)
+
+
+def list_precision_recall(field: str, pred: list, gold: list) -> tuple[float, float]:
+    """(precision, recall) of the best-match pairing between two lists.
+
+    precision: how much of what the model listed matches an answer-key item.
+    recall:    how much of the answer key the model's list covers.
+    Both are weighted by how well each pair matches.
+    """
+    if not gold and not pred:
+        return 1.0, 1.0
+    if not gold or not pred:
+        return (0.0 if pred else 1.0), (0.0 if gold else 1.0)
 
     grid = [[_item_similarity(field, p, g) for p in pred] for g in gold]
 
@@ -218,11 +235,7 @@ def compare_list(field: str, pred: list, gold: list) -> float:
         used_pred.add(pi)
         total += score
 
-    recall = total / len(gold)
-    precision = total / len(pred)
-    if precision + recall == 0:
-        return 0.0
-    return 2 * precision * recall / (precision + recall)
+    return total / len(pred), total / len(gold)
 
 
 # ---------------------------------------------------------------------------

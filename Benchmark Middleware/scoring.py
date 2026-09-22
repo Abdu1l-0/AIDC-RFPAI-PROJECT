@@ -13,7 +13,8 @@ from pathlib import Path
 from typing import Any, Dict
 
 from fields import FIELDS
-from matchers import CORRECT_AT, PARTIAL_AT, compare_values, count_extra_properties
+from matchers import (CORRECT_AT, PARTIAL_AT, _is_empty, compare_values,
+                      count_extra_properties, list_precision_recall)
 
 GOLD_DIR = Path(__file__).resolve().parent / "eval_set" / "ground_truth"
 
@@ -87,6 +88,89 @@ def score_cell(pred_cell: Dict[str, Any], gold_cell: Dict[str, Any], field_id: s
     }
 
 
+_TYPE_CHECKS = {
+    "array": lambda v: isinstance(v, list),
+    "object": lambda v: isinstance(v, dict),
+    "integer": lambda v: isinstance(v, int) and not isinstance(v, bool),
+    "number": lambda v: isinstance(v, (int, float)) and not isinstance(v, bool),
+    "string": lambda v: isinstance(v, str),
+    "boolean": lambda v: isinstance(v, bool),
+}
+
+
+def follows_instructions(pred_cell: Dict[str, Any] | None, field_type: str | None) -> bool:
+    """Did the model fill this field the way the prompt asks?
+
+      - the field is present in the answer
+      - 'found'      -> a value of the right shape and at least one evidence quote
+      - 'not_stated' -> no value
+    """
+    if not pred_cell:
+        return False
+    value = pred_cell.get("value")
+    if pred_cell.get("status") == "not_stated":
+        return _is_empty(value)
+    if _is_empty(value):
+        return False
+    shape_ok = _TYPE_CHECKS.get(field_type, lambda v: True)(value)
+    has_quote = any(isinstance(ev, dict) and ev.get("quote") for ev in pred_cell.get("evidence") or [])
+    return shape_ok and has_quote
+
+
+def _extra_checks(field_def: dict, field_id: str, pred_cell: dict | None,
+                  gold_cell: dict, result: dict) -> dict:
+    """Per-field inputs for completeness, relevance, support and instruction
+    following. None means the field does not count towards that metric."""
+    pred_cell = pred_cell or {}
+    answered = pred_cell.get("status") == "found"
+    stated = gold_cell.get("status", "not_stated") != "not_stated"
+    is_list = field_def.get("type") == "array"
+
+    precision = recall = None
+    if is_list:
+        pred_val, gold_val = pred_cell.get("value"), gold_cell.get("value")
+        pred_list = pred_val if isinstance(pred_val, list) else ([] if _is_empty(pred_val) else [pred_val])
+        gold_list = gold_val if isinstance(gold_val, list) else ([] if _is_empty(gold_val) else [gold_val])
+        if not stated:
+            gold_list = []
+        if not answered:
+            pred_list = []
+        if pred_list or gold_list:
+            precision, recall = list_precision_recall(field_id, pred_list, gold_list)
+        if not pred_list:
+            precision = None          # nothing returned: nothing to judge for relevance
+        if not gold_list:
+            recall = None             # nothing to find: nothing to judge for completeness
+
+    # completeness: only fields the RFP states. Lists: share of the key covered.
+    completeness = None
+    if stated:
+        completeness = recall if is_list else (1.0 if answered else 0.0)
+
+    # relevance: only answers the model gave. Lists: share of items that match.
+    relevance = None
+    if answered:
+        if is_list and precision is not None:
+            relevance = precision
+        else:
+            relevance = 1.0 if result["similarity"] >= PARTIAL_AT else 0.0
+
+    # supported: an answer with a quote that really is in the document, and not
+    # made up where the RFP says nothing.
+    supported = None
+    if answered:
+        supported = result["outcome"] != "fabrication" and result["evidence_grounded"] is True
+
+    return {
+        "list_precision": None if precision is None else round(precision, 3),
+        "list_recall": None if recall is None else round(recall, 3),
+        "completeness": None if completeness is None else round(completeness, 3),
+        "relevance": None if relevance is None else round(relevance, 3),
+        "supported": supported,
+        "follows_instructions": follows_instructions(pred_cell or None, field_def.get("type")),
+    }
+
+
 def load_ground_truth(doc_id: str) -> dict | None:
     """Load the gold answers for one document, or None if there are none yet.
 
@@ -111,11 +195,13 @@ def score_document(predicted_fields: dict, gold_fields: dict, source_text: str) 
 
     for field_name, field_def in FIELDS.items():
         field_class = field_def.get("field_class", "atomic_exact")
-        pred_cell = predicted_fields.get(field_name, {"status": "not_stated", "value": None})
-        gold_cell = gold_fields.get(field_name, {"status": "not_stated", "value": None})
+        raw_cell = predicted_fields.get(field_name)   # None when the model left it out
+        pred_cell = raw_cell or {"status": "not_stated", "value": None}
+        gold_cell = gold_fields.get(field_name) or {"status": "not_stated", "value": None}
 
         result = score_cell(pred_cell, gold_cell, field_name, field_class, source_text)
         result["field_class"] = field_class
+        result.update(_extra_checks(field_def, field_name, raw_cell, gold_cell, result))
         per_field[field_name] = result
         scores.append(result["score"])
 
@@ -131,6 +217,12 @@ def score_document(predicted_fields: dict, gold_fields: dict, source_text: str) 
     present = [c for c in cells if c["outcome"] not in ("correct_abstention", "fabrication")]
     graded = [c for c in cells if c["evidence_grounded"] is not None]
 
+    def _avg(key: str) -> float | None:
+        vals = [c[key] for c in cells if c[key] is not None]
+        return round(sum(vals) / len(vals), 3) if vals else None
+
+    answered = [c for c in cells if c["supported"] is not None]
+
     return {
         "per_field": per_field,
         "macro_accuracy": round(sum(scores) / len(scores), 3) if scores else None,
@@ -139,6 +231,10 @@ def score_document(predicted_fields: dict, gold_fields: dict, source_text: str) 
         "fabrication_rate": _rate(outcomes.count("fabrication"), len(absent)),
         "miss_rate": _rate(outcomes.count("miss"), len(present)),
         "grounding_rate": _rate(sum(1 for c in graded if c["evidence_grounded"]), len(graded)),
+        "completeness": _avg("completeness"),
+        "relevance": _avg("relevance"),
+        "unsupported_rate": _rate(sum(1 for c in answered if not c["supported"]), len(answered)),
+        "instruction_following": _rate(sum(1 for c in cells if c["follows_instructions"]), len(cells)),
         "counts": {name: outcomes.count(name) for name in
                    ("correct", "partial", "extraction_error", "miss",
                     "correct_abstention", "fabrication")},

@@ -28,6 +28,11 @@ def _has_gold(doc_id: str) -> bool:
     return False
 
 
+def has_gold(doc_id: str) -> bool:
+    """True when this document has an answer key in eval_set/ground_truth."""
+    return _has_gold(doc_id)
+
+
 def eval_documents() -> list[dict]:
     """Every PDF in the eval set, with whether it has gold answers."""
     if not EVAL_DOCS_DIR.exists():
@@ -56,6 +61,21 @@ def dataset_documents(dataset: str) -> list[dict]:
     if dataset == "eval_all":
         return docs
     raise KeyError(f"Unknown dataset '{dataset}'")
+
+
+RAW_DIR = DATA_DIR / "raw"
+RAW_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def save_raw(doc_id: str, model_key: str, raw_text: str | None) -> Path:
+    """Save a model's answer exactly as it came back, before any parsing.
+
+    Path: data/raw/<doc_id>__<model_key>.txt. Kept so bad or odd answers can
+    be read later, even when they could not be parsed.
+    """
+    path = RAW_DIR / f"{doc_id}__{model_key}.txt"
+    path.write_text(raw_text or "", encoding="utf-8")
+    return path
 
 
 def save_result(doc_id: str, model_key: str, result: dict) -> Path:
