@@ -1,0 +1,36 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Sensitive Secrets & Environment Variables (Never commit API keys!)
+.env
+.env.*
+*.key
+*.pem
+serving-keys.yaml
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and local temporary files
+*.log
+*.tmp
+/tmp/
+
+# Large model caches
+.cache/
+/var/lib/hf-cache/
