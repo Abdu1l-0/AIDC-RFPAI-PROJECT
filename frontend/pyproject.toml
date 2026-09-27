@@ -1,0 +1,22 @@
+[project]
+name = "frontend"
+version = "0.1.0"
+description = "AIDC RFP Benchmark frontend (Streamlit)"
+readme = "README.md"
+authors = [
+    { name = "Amer", email = "amoor0007070@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "pandas>=3.0.5",
+    "plotly>=7.1.0",
+    "python-dotenv>=1.2.3",
+    "streamlit>=1.64.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.8",
+]

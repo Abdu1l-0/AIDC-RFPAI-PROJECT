@@ -1,0 +1,484 @@
+{
+  "": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "name": "RFP Information Extraction Field Set",
+  "description": "Authoritative 17-field specification based on Capstone Guidance Appendix A and TDD Section 3.1",
+  "fields": {
+    "F01": {
+      "name": "Submission Deadline",
+      "description": "Final date and time for proposal submission",
+      "type": "object",
+      "cardinality": "single",
+      "absent_legal": false,
+      "field_class": "atomic_exact",
+      "properties": {
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "YYYY-MM-DD"
+        },
+        "time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "24h format HH:MM"
+        },
+        "tz_raw": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Timezone as written in document"
+        }
+      },
+      "required": [
+        "date"
+      ]
+    },
+    "F02": {
+      "name": "Deadline for Questions / Inquiries",
+      "description": "Deadline for vendors to submit questions or requests for clarification",
+      "type": "object",
+      "cardinality": "single",
+      "absent_legal": true,
+      "field_class": "atomic_exact",
+      "properties": {
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "YYYY-MM-DD"
+        },
+        "time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "24h format HH:MM"
+        },
+        "tz_raw": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Timezone as written in document"
+        }
+      }
+    },
+    "F03": {
+      "name": "RFP Contact",
+      "description": "Official contact person(s) and/or email for the procurement",
+      "type": "array",
+      "cardinality": "list",
+      "absent_legal": false,
+      "field_class": "list_set",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "email": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "email"
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "phone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "F04": {
+      "name": "Submission Method / Portal",
+      "description": "Platform, email address, or physical address where proposals must be submitted",
+      "type": "array",
+      "cardinality": "list",
+      "absent_legal": false,
+      "field_class": "short_string",
+      "items": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string",
+            "enum": [
+              "portal",
+              "email",
+              "physical",
+              "other"
+            ]
+          },
+          "portal_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "method"
+        ]
+      }
+    },
+    "F05": {
+      "name": "Contract Term / Duration",
+      "description": "Length of initial contract term and any renewal options",
+      "type": "object",
+      "cardinality": "single",
+      "absent_legal": false,
+      "field_class": "composite",
+      "properties": {
+        "base_length": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "base_unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "days",
+            "months",
+            "years",
+            null
+          ]
+        },
+        "renewals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "integer"
+              },
+              "length": {
+                "type": "number"
+              },
+              "unit": {
+                "type": "string",
+                "enum": [
+                  "days",
+                  "months",
+                  "years"
+                ]
+              }
+            }
+          }
+        },
+        "total_max_years": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "F06": {
+      "name": "Scope of Deliverables / Services Requested",
+      "description": "Summary of primary deliverables and services expected from the vendor",
+      "type": "object",
+      "cardinality": "single",
+      "absent_legal": false,
+      "field_class": "free_text",
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "key_deliverables": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "summary"
+      ]
+    },
+    "F07": {
+      "name": "Mandatory Submission Requirements",
+      "description": "Specific submission documents, forms, or formats that must be included",
+      "type": "array",
+      "cardinality": "list",
+      "absent_legal": false,
+      "field_class": "list_set",
+      "items": {
+        "type": "string"
+      }
+    },
+    "F08": {
+      "name": "Mandatory Technical Requirements",
+      "description": "Non-negotiable technical requirements (shall / must)",
+      "type": "array",
+      "cardinality": "list",
+      "absent_legal": true,
+      "field_class": "list_set",
+      "items": {
+        "type": "string"
+      }
+    },
+    "F09": {
+      "name": "Evaluation Criteria & Weighting",
+      "description": "Evaluation categories, points, or percentage weights",
+      "type": "array",
+      "cardinality": "list",
+      "absent_legal": true,
+      "field_class": "list_set",
+      "items": {
+        "type": "object",
+        "properties": {
+          "criterion": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "points",
+              "percent"
+            ]
+          }
+        },
+        "required": [
+          "criterion",
+          "weight",
+          "unit"
+        ]
+      }
+    },
+    "F10": {
+      "name": "Minimum Score Threshold to Advance",
+      "description": "Minimum passing score or cutoff threshold required to advance to next stage",
+      "type": "object",
+      "cardinality": "single",
+      "absent_legal": true,
+      "field_class": "atomic_exact",
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "points",
+            "percent",
+            null
+          ]
+        },
+        "applies_to": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "F11": {
+      "name": "Pricing Structure / Cost Submission Requirements",
+      "description": "Required fee structure (fixed price, T&M, rate card) and submission format",
+      "type": "object",
+      "cardinality": "single",
+      "absent_legal": false,
+      "field_class": "free_text",
+      "properties": {
+        "pricing_model": {
+          "type": "string"
+        },
+        "submission_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "F12": {
+      "name": "Minimum Insurance Coverage Requirements",
+      "description": "Required insurance types (CGL, Cyber, E&O) and dollar limits",
+      "type": "array",
+      "cardinality": "list",
+      "absent_legal": true,
+      "field_class": "composite",
+      "items": {
+        "type": "object",
+        "properties": {
+          "coverage_type": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "basis": {
+            "type": "string",
+            "enum": [
+              "per_occurrence",
+              "aggregate",
+              "unspecified"
+            ]
+          }
+        },
+        "required": [
+          "coverage_type",
+          "amount"
+        ]
+      }
+    },
+    "F13": {
+      "name": "Required Vendor Experience / Qualifications",
+      "description": "Specific vendor qualifications, such as minimum years of experience",
+      "type": "array",
+      "cardinality": "list",
+      "absent_legal": true,
+      "field_class": "composite",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement_type": {
+            "type": "string"
+          },
+          "years": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "detail"
+        ]
+      }
+    },
+    "F14": {
+      "name": "Number of References Required",
+      "description": "Count of client or past performance references required",
+      "type": "integer",
+      "cardinality": "single",
+      "absent_legal": true,
+      "field_class": "atomic_exact"
+    },
+    "F15": {
+      "name": "Data Security / Privacy Compliance Requirements",
+      "description": "Required certifications or compliance standards (SOC 2, ISO 27001, GDPR, HIPAA)",
+      "type": "array",
+      "cardinality": "list",
+      "absent_legal": true,
+      "field_class": "list_set",
+      "items": {
+        "type": "object",
+        "properties": {
+          "standard": {
+            "type": "string"
+          },
+          "detail": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "standard"
+        ]
+      }
+    },
+    "F16": {
+      "name": "Data Hosting / Residency Requirements",
+      "description": "Geographical data storage or residency restrictions",
+      "type": "object",
+      "cardinality": "single",
+      "absent_legal": true,
+      "field_class": "short_string",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "location": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "required"
+      ]
+    },
+    "F17": {
+      "name": "Vendor Demonstration Requirement",
+      "description": "Requirement for shortlisted vendors to perform an interview, demo, or presentation",
+      "type": "object",
+      "cardinality": "single",
+      "absent_legal": true,
+      "field_class": "composite",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "stage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "required"
+      ]
+    }
+  }
+}

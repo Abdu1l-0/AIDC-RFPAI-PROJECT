@@ -1,0 +1,99 @@
+{
+  "": "score.schema.json",
+  "type": "object",
+  "required": [
+    "scoring_id",
+    "run_id",
+    "model_key",
+    "doc_id",
+    "repeat_idx",
+    "field_id",
+    "field_class",
+    "outcome",
+    "score"
+  ],
+  "properties": {
+    "scoring_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "model_key": {
+      "type": "string"
+    },
+    "doc_id": {
+      "type": "string"
+    },
+    "repeat_idx": {
+      "type": "integer"
+    },
+    "field_id": {
+      "type": "string"
+    },
+    "field_class": {
+      "enum": [
+        "atomic_exact",
+        "short_string",
+        "composite",
+        "list_set",
+        "free_text",
+        "abstention"
+      ]
+    },
+    "outcome": {
+      "enum": [
+        "correct",
+        "correct_abstention",
+        "miss",
+        "extraction_error",
+        "fabrication",
+        "partial",
+        "unscorable"
+      ]
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "precision": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "recall": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "evidence_grounded": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "scored_by": {
+      "enum": [
+        "rule",
+        "judge",
+        "human"
+      ]
+    },
+    "judge_rationale": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "repair_level": {
+      "enum": [
+        "none",
+        "L1",
+        "L2"
+      ]
+    }
+  }
+}

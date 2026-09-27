@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "security_standards_aliases": {
+    "soc2": "SOC 2",
+    "soc 2": "SOC 2",
+    "soc 2 type ii": "SOC 2 Type II",
+    "soc2 type 2": "SOC 2 Type II",
+    "soc 2 type 2": "SOC 2 Type II",
+    "iso 27001": "ISO/IEC 27001",
+    "iso27001": "ISO/IEC 27001",
+    "iso/iec 27001": "ISO/IEC 27001",
+    "iso 27701": "ISO/IEC 27701",
+    "gdpr": "GDPR",
+    "hipaa": "HIPAA",
+    "fedramp": "FedRAMP",
+    "pci-dss": "PCI-DSS",
+    "pci dss": "PCI-DSS",
+    "pipeda": "PIPEDA",
+    "foip": "FOIP",
+    "nist 800-53": "NIST SP 800-53"
+  },
+  "insurance_type_aliases": {
+    "commercial general liability": "Commercial General Liability",
+    "cgl": "Commercial General Liability",
+    "general liability": "Commercial General Liability",
+    "cyber": "Cyber Liability",
+    "cyber liability": "Cyber Liability",
+    "cyber risk": "Cyber Liability",
+    "errors and omissions": "Errors & Omissions",
+    "e&o": "Errors & Omissions",
+    "professional liability": "Errors & Omissions",
+    "automobile liability": "Automobile Liability",
+    "auto liability": "Automobile Liability",
+    "workers compensation": "Workers Compensation",
+    "wcb": "Workers Compensation"
+  },
+  "portal_aliases": {
+    "bonfire": "Bonfire",
+    "merx": "MERX",
+    "biddingo": "Biddingo",
+    "bidsandtenders": "bids&tenders",
+    "alberta purchasing connection": "APC",
+    "apc": "APC"
+  }
+}

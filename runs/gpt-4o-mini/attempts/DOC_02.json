@@ -1,0 +1,186 @@
+{
+  "attempt_id": "att_DOC_02",
+  "run_id": "run_1789630866_gpt-4o-mini",
+  "model_key": "gpt-4o-mini",
+  "doc_id": "DOC_02",
+  "repeat_idx": 0,
+  "status": "ok",
+  "request": {
+    "prompt_sha256": "0b7af2fa5c4c894f144e1576bd6b4e51d170416172fbf520409b663949fce1f5",
+    "decoding": {
+      "temperature": 0.0,
+      "max_tokens": 2048
+    }
+  },
+  "response": {
+    "raw_text": "{\n  \"F01\": {\n    \"status\": \"found\",\n    \"value\": \"September 9, 2026 before 2:00:00 PM MT\",\n    \"evidence\": [\n      {\n        \"quote\": \"Closing Date and Time: September 9, 2026 before 2:00:00 PM MT\",\n        \"page\": 1\n      }\n    ]\n  },\n  \"F02\": {\n    \"status\": \"found\",\n    \"value\": \"September 2, 2026 before 2:00:00 PM MT\",\n    \"evidence\": [\n      {\n        \"quote\": \"Question Closing Time: September 2, 2026 before 2:00:00 PM MT\",\n        \"page\": 1\n      }\n    ]\n  },\n  \"F03\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"purchasing@oldscollege.ca\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Questions shall be directed to: Olds College Purchasing Department purchasing@oldscollege.ca\",\n        \"page\": 10\n      }\n    ]\n  },\n  \"F04\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"submissions@oldscollege.ca\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Proposals shall be addressed to: Olds College Purchasing Department submissions@oldscollege.ca\",\n        \"page\": 8\n      }\n    ]\n  },\n  \"F05\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"initial_term\": \"5 years\",\n      \"renewal_options\": \"2 separate 3 years renewals\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"Olds College will enter a contract for services for five (5) years. There will also be the opportunity to renew the contract for two (2) separate three (3) years renewals.\",\n        \"page\": 6\n      }\n    ]\n  },\n  \"F06\": {\n    \"status\": \"found\",\n    \"value\": \"Enhancing the College\u2019s existing learning management system (LMS) capabilities; either through the enhancement of third-party support for its existing Moodle LMS, or via a new LMS system.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Olds College is seeking to enhance its existing learning management system (LMS) capabilities; either through the enhancement of third-party support for its existing Moodle LMS, or via a new LMS system.\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F07\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Proposal Certification Document\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Certification document - Section C Item 9 \u201cProposal Certification Document\u201d must be completed in full and signed by the Proponent.\",\n        \"page\": 15\n      }\n    ]\n  },\n  \"F08\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F09\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Company Experience\",\n      \"Staff/Resource Experience\",\n      \"Proposed Solution and Approach\",\n      \"Pricing\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"The most important criteria are indicated by the highest weighting indicated on the following chart.\",\n        \"page\": 15\n      }\n    ]\n  },\n  \"F10\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F11\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"structure\": \"fixed price\",\n      \"submission_format\": \"as detailed within this RFP\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"Proponents shall submit pricing in their Proposal, as requested in Schedule D - Scope of Work and Pricing Schedule, as follows: in Canadian dollars, and Prices must remain fixed and applicable to all goods and services, as detailed within this RFP, throughout the entire term of the 5 year agreement.\",\n        \"page\": 13\n      }\n    ]\n  },\n  \"F12\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F13\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F14\": {\n    \"status\": \"found\",\n    \"value\": 3,\n    \"evidence\": [\n      {\n        \"quote\": \"Proponents should provide three references, where their company has provided the goods and services similar to those outlined in this RFP.\",\n        \"page\": 17\n      }\n    ]\n  },\n  \"F15\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F16\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F17\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  }\n}",
+    "finish_reason": "stop",
+    "model_id_returned": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "prompt_tokens": 19146,
+      "completion_tokens": 1106,
+      "source": "provider_reported"
+    }
+  },
+  "timings": {
+    "ms_total": 8002.43,
+    "ms_to_first_token": null
+  },
+  "parsed": {
+    "repair_level": "none",
+    "extracted_fields": {
+      "F01": {
+        "status": "found",
+        "value": "September 9, 2026 before 2:00:00 PM MT",
+        "evidence": [
+          {
+            "quote": "Closing Date and Time: September 9, 2026 before 2:00:00 PM MT",
+            "page": 1
+          }
+        ]
+      },
+      "F02": {
+        "status": "found",
+        "value": "September 2, 2026 before 2:00:00 PM MT",
+        "evidence": [
+          {
+            "quote": "Question Closing Time: September 2, 2026 before 2:00:00 PM MT",
+            "page": 1
+          }
+        ]
+      },
+      "F03": {
+        "status": "found",
+        "value": [
+          "purchasing@oldscollege.ca"
+        ],
+        "evidence": [
+          {
+            "quote": "Questions shall be directed to: Olds College Purchasing Department purchasing@oldscollege.ca",
+            "page": 10
+          }
+        ]
+      },
+      "F04": {
+        "status": "found",
+        "value": [
+          "submissions@oldscollege.ca"
+        ],
+        "evidence": [
+          {
+            "quote": "Proposals shall be addressed to: Olds College Purchasing Department submissions@oldscollege.ca",
+            "page": 8
+          }
+        ]
+      },
+      "F05": {
+        "status": "found",
+        "value": {
+          "initial_term": "5 years",
+          "renewal_options": "2 separate 3 years renewals"
+        },
+        "evidence": [
+          {
+            "quote": "Olds College will enter a contract for services for five (5) years. There will also be the opportunity to renew the contract for two (2) separate three (3) years renewals.",
+            "page": 6
+          }
+        ]
+      },
+      "F06": {
+        "status": "found",
+        "value": "Enhancing the College\u2019s existing learning management system (LMS) capabilities; either through the enhancement of third-party support for its existing Moodle LMS, or via a new LMS system.",
+        "evidence": [
+          {
+            "quote": "Olds College is seeking to enhance its existing learning management system (LMS) capabilities; either through the enhancement of third-party support for its existing Moodle LMS, or via a new LMS system.",
+            "page": 4
+          }
+        ]
+      },
+      "F07": {
+        "status": "found",
+        "value": [
+          "Proposal Certification Document"
+        ],
+        "evidence": [
+          {
+            "quote": "Certification document - Section C Item 9 \u201cProposal Certification Document\u201d must be completed in full and signed by the Proponent.",
+            "page": 15
+          }
+        ]
+      },
+      "F08": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F09": {
+        "status": "found",
+        "value": [
+          "Company Experience",
+          "Staff/Resource Experience",
+          "Proposed Solution and Approach",
+          "Pricing"
+        ],
+        "evidence": [
+          {
+            "quote": "The most important criteria are indicated by the highest weighting indicated on the following chart.",
+            "page": 15
+          }
+        ]
+      },
+      "F10": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F11": {
+        "status": "found",
+        "value": {
+          "structure": "fixed price",
+          "submission_format": "as detailed within this RFP"
+        },
+        "evidence": [
+          {
+            "quote": "Proponents shall submit pricing in their Proposal, as requested in Schedule D - Scope of Work and Pricing Schedule, as follows: in Canadian dollars, and Prices must remain fixed and applicable to all goods and services, as detailed within this RFP, throughout the entire term of the 5 year agreement.",
+            "page": 13
+          }
+        ]
+      },
+      "F12": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F13": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F14": {
+        "status": "found",
+        "value": 3,
+        "evidence": [
+          {
+            "quote": "Proponents should provide three references, where their company has provided the goods and services similar to those outlined in this RFP.",
+            "page": 17
+          }
+        ]
+      },
+      "F15": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F16": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F17": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      }
+    }
+  }
+}

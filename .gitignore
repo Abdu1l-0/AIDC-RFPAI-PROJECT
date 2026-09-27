@@ -34,3 +34,4 @@ Thumbs.db
 # Large model caches
 .cache/
 /var/lib/hf-cache/
+data/uploads/*.pdf

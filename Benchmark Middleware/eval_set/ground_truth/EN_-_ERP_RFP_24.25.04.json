@@ -1,0 +1,200 @@
+{
+  "document_id": "EN_-_ERP_RFP_24.25.04",
+  "fields": {
+    "submission_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2025-04-14",
+        "time": "23:59",
+        "tz_raw": null
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "questions_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2025-03-17",
+        "time": "23:59",
+        "tz_raw": null
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "rfp_contact": {
+      "status": "found",
+      "value": [
+        {
+          "name": "Jeremy Elliott",
+          "email": "procurement@cowichantribes.com",
+          "title": null,
+          "phone": null
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "submission_method": {
+      "status": "found",
+      "value": [
+        {
+          "method": "portal",
+          "portal_name": "BCBid",
+          "url": null
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "contract_term": {
+      "status": "found",
+      "value": {
+        "base_length": 5,
+        "base_unit": "years",
+        "renewals": [],
+        "total_max_years": null
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "scope_of_deliverables": {
+      "status": "found",
+      "value": {
+        "summary": "Cloud-based ERP system covering finance, procurement, HR, payroll, and asset management, replacing the legacy TIFIS system for those functions only",
+        "key_deliverables": []
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_submission_requirements": {
+      "status": "found",
+      "value": [
+        "Signed Submission Form (Appendix C)",
+        "Narrative Response in PDF following Appendix B structure",
+        "Pricing Excel Workbook",
+        "Requirements Excel Workbook"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_technical_requirements": {
+      "status": "found",
+      "value": [
+        "Support for Canadian taxes and payroll",
+        "Vendor experience implementing solutions for First Nations in Canada",
+        "Solution hosted in Canada, data stored in Canada",
+        "Implementation vendor has 5+ years experience in Finance, HR, Payroll, Asset Management",
+        "Cloud-based solution",
+        "SOC2 Type 2 compliant or equivalent"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "evaluation_criteria": {
+      "status": "found",
+      "value": [
+        {
+          "criterion": "Functional Fit",
+          "weight": 35,
+          "unit": "points"
+        },
+        {
+          "criterion": "Narrative Proposal",
+          "weight": 20,
+          "unit": "points"
+        },
+        {
+          "criterion": "Pricing",
+          "weight": 15,
+          "unit": "points"
+        },
+        {
+          "criterion": "Vendor Demonstration",
+          "weight": 30,
+          "unit": "points"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "minimum_score_threshold": {
+      "status": "found",
+      "value": {
+        "value": 80,
+        "unit": "percent",
+        "applies_to": "Stage III"
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "pricing_structure": {
+      "status": "found",
+      "value": {
+        "pricing_model": "5-year pricing broken out by cost type (subscription, implementation, training, etc.), Canadian funds, submitted via Excel template",
+        "submission_requirements": []
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "insurance_requirements": {
+      "status": "not_stated",
+      "value": null,
+      "evidence": [],
+      "search_record": []
+    },
+    "vendor_experience": {
+      "status": "found",
+      "value": [
+        {
+          "requirement_type": "Implementation experience",
+          "years": 5,
+          "detail": "At least 5 years implementing Finance, HR, Payroll, and Asset Management solutions; experience with First Nations clients preferred"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "references_required": {
+      "status": "found",
+      "value": 5,
+      "evidence": [
+        {
+          "quote": "At least two and at most five references for implementations involving the proposed solutions in Canada.",
+          "page": 21
+        }
+      ],
+      "search_record": []
+    },
+    "data_security_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "standard": "SOC2 Type 2",
+          "detail": "SOC2 Type 2 compliance or equivalent required"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "data_residency": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "location": "Canada",
+        "detail": "Must be hosted in Canada, all data stored within Canada"
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "demo_required": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "stage": null,
+        "detail": null
+      },
+      "evidence": [],
+      "search_record": []
+    }
+  }
+}

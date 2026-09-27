@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "documents": {
+    "DOC_01": {
+      "doc_id": "DOC_01",
+      "filename": "AB-2025-02456-RFP #25-004ERP Requirements Analysis and Readiness Review_Final (1).pdf",
+      "sha256": "d8b6f77d3259ed48dc2f2bbeefaa6f54e3b6af4b3665a1736b224cbeeca3b278",
+      "byte_size": 748070,
+      "page_count": 39
+    },
+    "DOC_02": {
+      "doc_id": "DOC_02",
+      "filename": "AB-2026-05648-197-2027 RFP Learning Management System (LMS) Platform  Support (2).pdf",
+      "sha256": "54242ba49dad269b69b7f8f5f7ec41e8ebeef4b8b958afed893624b14160d590",
+      "byte_size": 822477,
+      "page_count": 38
+    },
+    "DOC_03": {
+      "doc_id": "DOC_03",
+      "filename": "City of Medicine Hat - LMS tender.pdf",
+      "sha256": "ae62fc425690d75768df4c7ba785690d643208d561a08b258bd76a9113313957",
+      "byte_size": 509142,
+      "page_count": 34
+    },
+    "DOC_04": {
+      "doc_id": "DOC_04",
+      "filename": "EN_-_ERP_RFP_24.25.04.pdf",
+      "sha256": "17b16083694ff7e82b6a38e618c2f61554ccb1ebdc8611fca5874f2f3784ed29",
+      "byte_size": 778220,
+      "page_count": 27
+    },
+    "DOC_05": {
+      "doc_id": "DOC_05",
+      "filename": "RFP CP-730126 Generative AI RFP (4).pdf",
+      "sha256": "c8fb73e96be3949ab6e0e3faa2ffde909847a54d4d292cd7f5157527f8dc2cb3",
+      "byte_size": 347319,
+      "page_count": 33
+    }
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "document_id": "AB-2026-05648-197-2027 RFP Learning Management System (LMS) Platform  Support (2)",
+  "fields": {
+    "submission_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2026-09-09",
+        "time": "14:00",
+        "tz_raw": "MT"
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "questions_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2026-09-02",
+        "time": "14:00",
+        "tz_raw": "MT"
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "rfp_contact": {
+      "status": "found",
+      "value": [
+        {
+          "name": null,
+          "email": "purchasing@oldscollege.ca",
+          "title": "Olds College Purchasing Department",
+          "phone": null
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "submission_method": {
+      "status": "found",
+      "value": [
+        {
+          "method": "email",
+          "portal_name": null,
+          "url": "submissions@oldscollege.ca"
+        },
+        {
+          "method": "portal",
+          "portal_name": "Alberta Purchasing Connection (APC)",
+          "url": null
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "contract_term": {
+      "status": "found",
+      "value": {
+        "base_length": 5,
+        "base_unit": "years",
+        "renewals": [
+          {
+            "count": 2,
+            "length": 3,
+            "unit": "years"
+          }
+        ],
+        "total_max_years": 11
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "scope_of_deliverables": {
+      "status": "found",
+      "value": {
+        "summary": "Enhancement of third-party support for the existing Moodle LMS, or a new cloud-based LMS.",
+        "key_deliverables": [
+          "Learning content development and management",
+          "Assessment and gradebooks",
+          "Engagement and communication",
+          "Artificial intelligence tools",
+          "Support for in-person, online and blended delivery",
+          "Academic integrity tools",
+          "Accessibility (WCAG)",
+          "Mobile learning",
+          "Integrations (including Ellucian Banner and APIs)",
+          "Security",
+          "Data migration",
+          "Cloud hosting",
+          "Data analytics",
+          "Customer support",
+          "Implementation and training"
+        ]
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_submission_requirements": {
+      "status": "found",
+      "value": [
+        "Proposal Certification Document (Section C, Item 9) must be completed in full and signed by the Proponent; otherwise the proposal is rejected",
+        "References must be satisfactory for the proposal to be considered compliant"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_technical_requirements": {
+      "status": "found",
+      "value": [
+        "Must be able to provide a HECVAT cybersecurity and privacy assessment",
+        "Must integrate with Ellucian Banner (Student Information System)"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "evaluation_criteria": {
+      "status": "found",
+      "value": [
+        {
+          "criterion": "Company Experience",
+          "weight": 15,
+          "unit": "points"
+        },
+        {
+          "criterion": "Staff/Resource Experience",
+          "weight": 5,
+          "unit": "points"
+        },
+        {
+          "criterion": "Proposed Solution and Approach",
+          "weight": 40,
+          "unit": "points"
+        },
+        {
+          "criterion": "Pricing",
+          "weight": 40,
+          "unit": "points"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "minimum_score_threshold": {
+      "status": "not_stated",
+      "value": null,
+      "evidence": [],
+      "search_record": []
+    },
+    "pricing_structure": {
+      "status": "found",
+      "value": {
+        "pricing_model": "Pricing in Canadian dollars, fixed for the entire 5-year term",
+        "submission_requirements": [
+          "Preferred pricing chart with one-time implementation or enhancement costs (training, data migration, etc.)",
+          "Annual software subscription and/or ongoing support costs for Years 1 to 5",
+          "Separate pricing for each module or option",
+          "Plus GST 5%"
+        ]
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "insurance_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "coverage_type": "General Liability",
+          "amount": 5000000,
+          "currency": "CAD",
+          "basis": "per_occurrence"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "vendor_experience": {
+      "status": "found",
+      "value": [
+        {
+          "requirement_type": "Company experience",
+          "years": null,
+          "detail": "No minimum years specified. Company history and years providing the requested goods and services, experience providing LMS systems and support or support for Moodle LMS"
+        },
+        {
+          "requirement_type": "Sector experience",
+          "years": null,
+          "detail": "Experience with post-secondary institutions including those using Ellucian Banner"
+        },
+        {
+          "requirement_type": "Staff qualifications",
+          "years": null,
+          "detail": "Staff experience and qualifications with resumes"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "references_required": {
+      "status": "found",
+      "value": 3,
+      "evidence": [],
+      "search_record": []
+    },
+    "data_security_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "standard": "POPA",
+          "detail": "Compliance with Alberta Protection of Privacy Act"
+        },
+        {
+          "standard": "ATIA",
+          "detail": "Compliance with Access to Information Act"
+        },
+        {
+          "standard": "HECVAT",
+          "detail": "HECVAT cybersecurity and privacy assessment"
+        },
+        {
+          "standard": "SSO",
+          "detail": "SAML-based Single Sign-On"
+        },
+        {
+          "standard": "MFA",
+          "detail": "Statement on whether local Multi-Factor Authentication is supported or depends on SSO"
+        },
+        {
+          "standard": "Data security standards",
+          "detail": "Data security standards and safeguards against data breaches"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "data_residency": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "location": "Canada (preferred)",
+        "detail": "Cloud-based platform required (not on-premise). Canadian host location is preferred."
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "demo_required": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "stage": "RFP evaluation (product demos and vendor interviews)",
+        "detail": "Product demos during RFP evaluations (September 10 to November 15, 2026) and vendor interviews (September 15 to November 15, 2026, or TBD). Olds College may also request presentations from short-listed Proponents."
+      },
+      "evidence": [],
+      "search_record": []
+    }
+  }
+}

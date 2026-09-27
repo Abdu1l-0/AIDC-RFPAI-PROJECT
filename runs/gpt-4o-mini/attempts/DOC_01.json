@@ -1,0 +1,180 @@
+{
+  "attempt_id": "att_DOC_01",
+  "run_id": "run_1789630866_gpt-4o-mini",
+  "model_key": "gpt-4o-mini",
+  "doc_id": "DOC_01",
+  "repeat_idx": 0,
+  "status": "ok",
+  "request": {
+    "prompt_sha256": "d2c48b267168900071f8eb263fb58a514028576ac8048c2da0e45f9935a12f73",
+    "decoding": {
+      "temperature": 0.0,
+      "max_tokens": 2048
+    }
+  },
+  "response": {
+    "raw_text": "{\n  \"F01\": {\n    \"status\": \"found\",\n    \"value\": \"May 14, 2025, 2.00 PM MST Alberta Time\",\n    \"evidence\": [\n      {\n        \"quote\": \"Submission Deadline:   May 14, 2025, 2.00 PM MST Alberta Time\",\n        \"page\": 1\n      }\n    ]\n  },\n  \"F02\": {\n    \"status\": \"found\",\n    \"value\": \"April 17, 2025, 2 PM MST\",\n    \"evidence\": [\n      {\n        \"quote\": \"Deadline for Questions April 17, 2025, 2 PM MST\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F03\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Indra Ghosh, Supervisor of Purchasing and Treasury\",\n      \"PublicBids@rockyview.ca\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"For the purposes of this procurement process, the \u201cRFP Contact\u201d will be  Indra Ghosh, Supervisor of Purchasing and Treasury. PublicBids@rockyview.ca\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F04\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"PublicBids@rockyview.ca\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Proposals must be addressed to: Purchasing Department Rocky View County Attention: Indra Ghosh, Email: PublicBids@rockyview.ca\",\n        \"page\": 5\n      }\n    ]\n  },\n  \"F05\": {\n    \"status\": \"found\",\n    \"value\": {\n      \"initial_term\": \"until December 31, 2025\",\n      \"renewal_options\": \"up to one (1) additional year, for a total period not to exceed three (3) years\"\n    },\n    \"evidence\": [\n      {\n        \"quote\": \"The agreement resulting from this RFP shall be in effect from the date of official acceptance by the County until December 31, 2025, subject to the following: ... this agreement may be renewed under the same terms and conditions for a period of up to one (1) additional year ... for a total period not to exceed three (3) years.\",\n        \"page\": 4\n      }\n    ]\n  },\n  \"F06\": {\n    \"status\": \"found\",\n    \"value\": \"Comprehensive Enterprise Resource Planning (ERP) Requirements Analysis and Readiness Review, followed by the development of a Request for Proposal (RFP) document.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Rocky View County seeks to: ... conduct a comprehensive Enterprise Resource Planning (ERP) Requirements Analysis and Readiness Review, followed by the development of a Request for Proposal (RFP) document.\",\n        \"page\": 3\n      }\n    ]\n  },\n  \"F07\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Submission Form\",\n      \"Pricing Schedule\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"Proponents are instructed to complete the Submission Form set out in Appendix B of this RFP and include it in their proposal submission.\",\n        \"page\": 29\n      },\n      {\n        \"quote\": \"Proponents are instructed to complete the Pricing Schedule as set out in Section F of Appendix D of this RFP and include it in their proposal submission.\",\n        \"page\": 29\n      }\n    ]\n  },\n  \"F08\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F09\": {\n    \"status\": \"found\",\n    \"value\": [\n      \"Proponent\u2019s Experience and Qualifications\",\n      \"Service Team Qualifications and Experience\",\n      \"Client References and Past Experience\",\n      \"Work Plan, Methodology, and Quality Assurance\",\n      \"Pricing\"\n    ],\n    \"evidence\": [\n      {\n        \"quote\": \"The table below sets out the categories, weightings, and descriptions of the rated criteria of the RFP.\",\n        \"page\": 30\n      }\n    ]\n  },\n  \"F10\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F11\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F12\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F13\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F14\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F15\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F16\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  },\n  \"F17\": {\n    \"status\": \"not_stated\",\n    \"value\": null,\n    \"evidence\": []\n  }\n}",
+    "finish_reason": "stop",
+    "model_id_returned": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "prompt_tokens": 19140,
+      "completion_tokens": 1127,
+      "source": "provider_reported"
+    }
+  },
+  "timings": {
+    "ms_total": 8834.43,
+    "ms_to_first_token": null
+  },
+  "parsed": {
+    "repair_level": "none",
+    "extracted_fields": {
+      "F01": {
+        "status": "found",
+        "value": "May 14, 2025, 2.00 PM MST Alberta Time",
+        "evidence": [
+          {
+            "quote": "Submission Deadline:   May 14, 2025, 2.00 PM MST Alberta Time",
+            "page": 1
+          }
+        ]
+      },
+      "F02": {
+        "status": "found",
+        "value": "April 17, 2025, 2 PM MST",
+        "evidence": [
+          {
+            "quote": "Deadline for Questions April 17, 2025, 2 PM MST",
+            "page": 4
+          }
+        ]
+      },
+      "F03": {
+        "status": "found",
+        "value": [
+          "Indra Ghosh, Supervisor of Purchasing and Treasury",
+          "PublicBids@rockyview.ca"
+        ],
+        "evidence": [
+          {
+            "quote": "For the purposes of this procurement process, the \u201cRFP Contact\u201d will be  Indra Ghosh, Supervisor of Purchasing and Treasury. PublicBids@rockyview.ca",
+            "page": 4
+          }
+        ]
+      },
+      "F04": {
+        "status": "found",
+        "value": [
+          "PublicBids@rockyview.ca"
+        ],
+        "evidence": [
+          {
+            "quote": "Proposals must be addressed to: Purchasing Department Rocky View County Attention: Indra Ghosh, Email: PublicBids@rockyview.ca",
+            "page": 5
+          }
+        ]
+      },
+      "F05": {
+        "status": "found",
+        "value": {
+          "initial_term": "until December 31, 2025",
+          "renewal_options": "up to one (1) additional year, for a total period not to exceed three (3) years"
+        },
+        "evidence": [
+          {
+            "quote": "The agreement resulting from this RFP shall be in effect from the date of official acceptance by the County until December 31, 2025, subject to the following: ... this agreement may be renewed under the same terms and conditions for a period of up to one (1) additional year ... for a total period not to exceed three (3) years.",
+            "page": 4
+          }
+        ]
+      },
+      "F06": {
+        "status": "found",
+        "value": "Comprehensive Enterprise Resource Planning (ERP) Requirements Analysis and Readiness Review, followed by the development of a Request for Proposal (RFP) document.",
+        "evidence": [
+          {
+            "quote": "Rocky View County seeks to: ... conduct a comprehensive Enterprise Resource Planning (ERP) Requirements Analysis and Readiness Review, followed by the development of a Request for Proposal (RFP) document.",
+            "page": 3
+          }
+        ]
+      },
+      "F07": {
+        "status": "found",
+        "value": [
+          "Submission Form",
+          "Pricing Schedule"
+        ],
+        "evidence": [
+          {
+            "quote": "Proponents are instructed to complete the Submission Form set out in Appendix B of this RFP and include it in their proposal submission.",
+            "page": 29
+          },
+          {
+            "quote": "Proponents are instructed to complete the Pricing Schedule as set out in Section F of Appendix D of this RFP and include it in their proposal submission.",
+            "page": 29
+          }
+        ]
+      },
+      "F08": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F09": {
+        "status": "found",
+        "value": [
+          "Proponent\u2019s Experience and Qualifications",
+          "Service Team Qualifications and Experience",
+          "Client References and Past Experience",
+          "Work Plan, Methodology, and Quality Assurance",
+          "Pricing"
+        ],
+        "evidence": [
+          {
+            "quote": "The table below sets out the categories, weightings, and descriptions of the rated criteria of the RFP.",
+            "page": 30
+          }
+        ]
+      },
+      "F10": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F11": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F12": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F13": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F14": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F15": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F16": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      },
+      "F17": {
+        "status": "not_stated",
+        "value": null,
+        "evidence": []
+      }
+    }
+  }
+}

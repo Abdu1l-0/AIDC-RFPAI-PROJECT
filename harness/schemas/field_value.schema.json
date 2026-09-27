@@ -1,0 +1,46 @@
+{
+  "": "field_value.schema.json",
+  "type": "object",
+  "required": [
+    "status"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "found",
+        "not_stated"
+      ]
+    },
+    "value": {
+      "description": "Type governed by the field definition in field_set.json. Must be null when status is not_stated.",
+      "type": [
+        "string",
+        "number",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "quote"
+        ],
+        "properties": {
+          "quote": {
+            "type": "string"
+          },
+          "page": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
