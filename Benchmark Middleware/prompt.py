@@ -1,5 +1,6 @@
 import json
 import hashlib
+import re
 from pathlib import Path
 
 from fields import FIELDS, value_shape
@@ -21,6 +22,42 @@ def _read(path: Path) -> str:
     and get a different prompt_sha256 - between two team members' laptops.
     """
     return path.read_text(encoding="utf-8").replace("\r\n", "\n").strip()
+
+
+ARABIC_RANGE = re.compile(r"[\u0600-\u06FF]")
+
+
+def _compact(text: str) -> str:
+    """Squeeze runs of whitespace out of the document text.
+
+    PDF extraction leaves long runs of spaces and blank lines, and whitespace
+    tokenizes badly - about 850 characters per Arabic RFP, roughly 340 tokens.
+    Safe for scoring: check_grounding() normalizes whitespace on both the quote
+    and the source before comparing, so collapsing it here cannot break a match.
+    """
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r" *\n *", "\n", text)
+    return re.sub(r"\n{3,}", "\n\n", text)
+
+
+def _language_note(doc_text: str) -> str:
+    """A concrete language instruction, placed LAST in the user message.
+
+    Rule 5 alone ("answer in the language of the RFP") did not work on the 8B
+    model: every rule, field name and shape around it is English, and the last
+    line before generation is English too, so it answered in English and even
+    quoted the English field descriptions back as evidence. Naming the language
+    outright, immediately before generation, is what the smaller model follows.
+    """
+    if len(ARABIC_RANGE.findall(doc_text[:20000])) < 100:
+        return ""
+    return (
+        "IMPORTANT - LANGUAGE: the RFP TEXT above is written in Arabic.\n"
+        "Write every text value and every \"quote\" in ARABIC, copied from the\n"
+        "RFP TEXT above. Do not translate anything into English. Never quote\n"
+        "these instructions or the field descriptions - every quote must come\n"
+        "from the RFP TEXT itself.\n\n"
+    )
 
 
 def build_messages(doc_text: str, shapes_in_prompt: bool = False) -> dict:
@@ -52,9 +89,9 @@ def build_messages(doc_text: str, shapes_in_prompt: bool = False) -> dict:
         # list-valued fields and drop the {status, value, evidence} wrapper.
         fields_guide = [
             f"{name}: {fdef['name']} - {fdef['description']}\n"
-            f'  answer as: {{"status": "found" | "not_stated", '
-            f'"value": {value_shape(name)} | null, '
-            f'"evidence": [{{"quote": "exact text", "page": integer}}]}}'
+            f'  answer as: {{"status":"found"|"not_stated",'
+            f'"value":{value_shape(name)}|null,'
+            f'"evidence":[{{"quote":"exact text","page":int}}]}}'
             for name, fdef in FIELDS.items()
         ]
     else:
@@ -65,7 +102,8 @@ def build_messages(doc_text: str, shapes_in_prompt: bool = False) -> dict:
 
     user_prompt = (
         "FIELDS TO EXTRACT:\n" + "\n".join(fields_guide) + "\n\n"
-        "RFP TEXT:\n" + doc_text + "\n\n"
+        "RFP TEXT:\n" + _compact(doc_text) + "\n\n"
+        + _language_note(doc_text) +
         "Output extracted JSON object:"
     )
 

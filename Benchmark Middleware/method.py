@@ -9,7 +9,8 @@ from __future__ import annotations
 
 from config import settings
 from fields import FIELDS
-from llm_client import ENFORCING_MODES, MAX_RETRIES, MAX_TOKENS, MODEL_CONFIG, TIMEOUT_S
+from llm_client import (ENFORCING_MODES, MAX_RETRIES, MODEL_CONFIG, TIMEOUT_S,
+                        TOKEN_CEILING, TOKEN_FLOOR)
 from matchers import CORRECT_AT, PARTIAL_AT
 from prompt import VARIANT_ENFORCED, VARIANT_SHAPES
 import storage
@@ -202,7 +203,7 @@ def build_method() -> dict:
         "models": models,
         "settings": {
             "temperature": 0.0,
-            "max_output_tokens": MAX_TOKENS,
+            "max_output_tokens": TOKEN_CEILING,
             "timeout_s": TIMEOUT_S,
             "retries": MAX_RETRIES,
             "scored_documents": len(scored_docs),
@@ -216,5 +217,11 @@ def build_method() -> dict:
             "answers that say the same thing in different words.",
             "The answer keys were drafted with a model and reviewed by a person; they are not yet "
             "double-annotated.",
+            f"max_output_tokens is a ceiling, not a fixed request. A self-hosted model's context "
+            f"window is shared between the prompt and the answer, so each call asks for whatever "
+            f"the window has left, capped at {TOKEN_CEILING} and floored at {TOKEN_FLOOR}. Arabic "
+            f"costs about 1.6x more tokens than English for the same RFP, so the longest Arabic "
+            f"documents leave roughly {TOKEN_FLOOR}-2700 tokens for the answer where English "
+            f"documents leave the full ceiling.",
         ],
     }

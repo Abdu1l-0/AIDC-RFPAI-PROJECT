@@ -4,3 +4,4 @@ RULES:
 2. For each field: {"status": "found" | "not_stated", "value": <extracted_val_or_null>, "evidence": [{"quote": "exact text sentence", "page": <int_or_null>}]}.
 3. If a field is absent, set "status": "not_stated", "value": null, "evidence": []. Do NOT fabricate.
 4. Strict JSON output only. No markdown formatting, no commentary.
+5. Answer in the language of the RFP TEXT. Every "quote" must be copied verbatim from the RFP TEXT above, in its original language and script - never translated, never re-worded. Text values must be in the document's own language too. Dates, times, numbers, emails and URLs keep the normalized form asked for. Take "page" from the "--- Page N ---" marker the quote sits under; never guess it.

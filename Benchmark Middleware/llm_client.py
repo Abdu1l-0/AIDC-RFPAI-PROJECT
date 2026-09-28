@@ -45,8 +45,9 @@ def enabled_models() -> list[str]:
 
 
 def ping_model(model_key: str, timeout_s: float = 6.0) -> str:
-    """Cheap check that a model endpoint answers. Returns 'ok', 'off', or an
-    error string. Does not spend tokens: it only lists the endpoint's models.
+    """Cheap check that the endpoint answers AND is serving the model we
+    ask for. Returns 'ok', 'off', 'not loaded', or an error string.
+    Spends no tokens: it only lists the endpoint's models.
     """
     cfg = MODEL_CONFIG.get(model_key)
     if cfg is None:
@@ -60,15 +61,104 @@ def ping_model(model_key: str, timeout_s: float = 6.0) -> str:
         resp = requests.get(url, headers=headers, timeout=timeout_s)
     except requests.exceptions.RequestException as exc:
         return f"unreachable: {type(exc).__name__}"
-    if resp.status_code == 200:
-        return "ok"
-    return f"error {resp.status_code}"
+    if resp.status_code != 200:
+        return f"error {resp.status_code}"
 
+    try:
+        served = {m.get("id") for m in resp.json().get("data", [])}
+    except ValueError:
+        return "ok"
+    if not served:
+        return "ok"
+    return "ok" if cfg["name"] in served else "not loaded"
 # Self-hosted models need well over a minute for a full RFP. A timeout is not
 # retried: the same slow request would just double the wait.
 TIMEOUT_S = 180
 MAX_RETRIES = 1
-MAX_TOKENS = 8000
+
+# How many output tokens to ask for. This is NOT a fixed number: a self-hosted
+# model has a fixed context window shared between the prompt and the answer, so
+# a long document leaves less room for the answer. Arabic makes this sharp -
+# the same RFP costs ~1.6x more tokens in Arabic than in English, so a value
+# that fits every English document overflows on the long Arabic ones.
+# _token_budget() therefore asks the endpoint how long the prompt actually is
+# and gives the answer whatever is left.
+TOKEN_CEILING = 4000     # never ask for more than this, however much room there is
+TOKEN_FLOOR = 1200       # below this an answer cannot be complete; let it fail loudly
+CONTEXT_MARGIN = 64       # small slack: the reported prompt count already covers the template
+
+# base_url -> context length, so we ask each endpoint only once.
+_context_cache: dict[str, int | None] = {}
+
+
+def _headers(cfg: dict) -> dict:
+    return {"Authorization": f"Bearer {cfg['api_key']}"} if cfg["api_key"] else {}
+
+
+def _probe_prompt(cfg: dict, messages: list) -> tuple[int | None, int | None]:
+    """Ask a vLLM endpoint for the exact prompt length via POST /tokenize.
+
+    vLLM serves /tokenize at the server root, next to /v1, and its reply
+    carries both "count" and "max_model_len" - exactly the two numbers the
+    budget needs, with no estimating. OpenAI has no such endpoint; it returns
+    (None, None) and the caller falls back.
+    """
+    root = cfg["base_url"].rstrip("/")
+    candidates = [root[:-3].rstrip("/") + "/tokenize"] if root.endswith("/v1") else []
+    candidates.append(root + "/tokenize")
+    for url in candidates:
+        try:
+            r = requests.post(url, json={"model": cfg["name"], "messages": messages},
+                              headers=_headers(cfg), timeout=15)
+            if r.status_code == 200:
+                d = r.json()
+                return d.get("count"), d.get("max_model_len")
+        except requests.exceptions.RequestException:
+            continue
+        except ValueError:
+            continue
+    return None, None
+
+
+def _estimate_tokens(messages: list) -> int:
+    """Conservative fallback when the endpoint will not tokenize for us.
+
+    Deliberately pessimistic: Arabic script runs about 2.44 characters per
+    token on our corpus (measured), Latin about 3.4. Over-estimating the
+    prompt only costs a slightly shorter answer; under-estimating costs a
+    failed request.
+    """
+    text = "".join(m["content"] for m in messages)
+    arabic = sum(1 for ch in text if "\u0600" <= ch <= "\u06ff")
+    ratio = 2.44 if arabic > len(text) * 0.15 else 3.4
+    return int(len(text) / ratio) + 1
+
+
+def _token_budget(cfg: dict, messages: list) -> int:
+    """Output tokens to request: whatever the context window has left."""
+    count, limit = _probe_prompt(cfg, messages)
+
+    if limit is None:
+        limit = _context_cache.get(cfg["base_url"], "miss")
+        if limit == "miss":
+            limit = None
+            try:
+                r = requests.get(f"{cfg['base_url'].rstrip('/')}/models",
+                                 headers=_headers(cfg), timeout=6)
+                if r.status_code == 200:
+                    for m in r.json().get("data", []):
+                        if m.get("id") == cfg["name"]:
+                            limit = m.get("max_model_len")
+            except (requests.exceptions.RequestException, ValueError):
+                pass
+            _context_cache[cfg["base_url"]] = limit
+
+    if not limit:
+        # No context length available (OpenAI, whose window dwarfs our prompts).
+        return TOKEN_CEILING
+    if count is None:
+        count = _estimate_tokens(messages)
+    return max(TOKEN_FLOOR, min(TOKEN_CEILING, int(limit) - int(count) - CONTEXT_MARGIN))
 
 def apply_schema_mode(payload: dict, schema_mode: str) -> dict:
     """Add the right "answer in this schema" instruction for this endpoint.
@@ -140,11 +230,12 @@ def call_model(model_key: str, text: str, doc_id: str = "-") -> dict:
         headers["Authorization"] = f"Bearer {cfg['api_key']}"
 
     sha = prompt_res["prompt_sha256"]
+    max_tokens = _token_budget(cfg, messages)
     payload = apply_schema_mode({
         "model": cfg["name"],
         "messages": messages,
         "temperature": 0.0,
-        "max_tokens": MAX_TOKENS,
+        "max_tokens": max_tokens,
     }, schema_mode)
 
     # Sizes only - never the text itself, and never the headers (API key).
@@ -152,7 +243,7 @@ def call_model(model_key: str, text: str, doc_id: str = "-") -> dict:
     log.info("-> model=%s doc=%s host=%s served_name=%s schema_mode=%s prompt=%s "
              "prompt_chars=%d body_kb=%.1f max_tokens=%d",
              model_key, doc_id, urlparse(url).netloc, cfg["name"], schema_mode, variant,
-             prompt_chars, len(json.dumps(payload)) / 1024, MAX_TOKENS)
+             prompt_chars, len(json.dumps(payload)) / 1024, max_tokens)
 
     last_error = None
     for attempt in range(MAX_RETRIES + 1):
