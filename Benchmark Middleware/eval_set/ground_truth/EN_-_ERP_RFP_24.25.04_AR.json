@@ -1,0 +1,200 @@
+{
+  "document_id": "EN_-_ERP_RFP_24.25.04",
+  "fields": {
+    "submission_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2025-04-14",
+        "time": "23:59",
+        "tz_raw": null
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "questions_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2025-03-17",
+        "time": "23:59",
+        "tz_raw": null
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "rfp_contact": {
+      "status": "found",
+      "value": [
+        {
+          "name": "Jeremy Elliott",
+          "email": "procurement@cowichantribes.com",
+          "title": null,
+          "phone": null
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "submission_method": {
+      "status": "found",
+      "value": [
+        {
+          "method": "portal",
+          "portal_name": "BCBid",
+          "url": null
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "contract_term": {
+      "status": "found",
+      "value": {
+        "base_length": 5,
+        "base_unit": "years",
+        "renewals": [],
+        "total_max_years": null
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "scope_of_deliverables": {
+      "status": "found",
+      "value": {
+        "summary": "نظام تخطيط موارد المؤسسات (ERP) قائم على السحابة يغطي الشؤون المالية والمشتريات والموارد البشرية والرواتب وإدارة الأصول، ليحل محل نظام TIFIS القديم في هذه الوظائف فقط",
+        "key_deliverables": []
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_submission_requirements": {
+      "status": "found",
+      "value": [
+        "نموذج التقديم الموقَّع (الملحق ج)",
+        "الرد السردي بصيغة PDF وفقًا لهيكل الملحق ب",
+        "مصنف Excel للتسعير",
+        "مصنف Excel للمتطلبات"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_technical_requirements": {
+      "status": "found",
+      "value": [
+        "دعم الضرائب والرواتب الكندية",
+        "خبرة المورّد في تنفيذ حلول لدى الأمم الأولى في كندا",
+        "الحل مستضاف في كندا، والبيانات مخزَّنة في كندا",
+        "يمتلك مورّد التنفيذ خبرة 5 سنوات أو أكثر في الشؤون المالية والموارد البشرية والرواتب وإدارة الأصول",
+        "حل قائم على السحابة",
+        "متوافق مع معيار SOC2 Type 2 أو ما يعادله"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "evaluation_criteria": {
+      "status": "found",
+      "value": [
+        {
+          "criterion": "الملاءمة الوظيفية",
+          "weight": 35,
+          "unit": "points"
+        },
+        {
+          "criterion": "العرض السردي",
+          "weight": 20,
+          "unit": "points"
+        },
+        {
+          "criterion": "التسعير",
+          "weight": 15,
+          "unit": "points"
+        },
+        {
+          "criterion": "العرض التوضيحي للمورّد",
+          "weight": 30,
+          "unit": "points"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "minimum_score_threshold": {
+      "status": "found",
+      "value": {
+        "value": 80,
+        "unit": "percent",
+        "applies_to": "المرحلة الثالثة"
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "pricing_structure": {
+      "status": "found",
+      "value": {
+        "pricing_model": "تسعير لمدة 5 سنوات موزَّع حسب نوع التكلفة (الاشتراك، التنفيذ، التدريب، إلخ)، بالدولار الكندي، يُقدَّم عبر نموذج Excel",
+        "submission_requirements": []
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "insurance_requirements": {
+      "status": "not_stated",
+      "value": null,
+      "evidence": [],
+      "search_record": []
+    },
+    "vendor_experience": {
+      "status": "found",
+      "value": [
+        {
+          "requirement_type": "خبرة التنفيذ",
+          "years": 5,
+          "detail": "خبرة لا تقل عن 5 سنوات في تنفيذ حلول الشؤون المالية والموارد البشرية والرواتب وإدارة الأصول؛ يُفضَّل الخبرة مع عملاء الأمم الأولى"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "references_required": {
+      "status": "found",
+      "value": 5,
+      "evidence": [
+        {
+          "quote": "تقديم ما لا يقل عن مرجعين وما لا يزيد عن خمسة مراجع لتنفيذات تشمل الحلول المقترحة في كندا.",
+          "page": 17
+        }
+      ],
+      "search_record": []
+    },
+    "data_security_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "standard": "SOC2 Type 2",
+          "detail": "يُشترط الامتثال لمعيار SOC2 Type 2 أو ما يعادله"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "data_residency": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "location": "كندا",
+        "detail": "يجب أن يكون الحل مستضافًا في كندا، وتُخزَّن جميع البيانات داخل كندا"
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "demo_required": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "stage": null,
+        "detail": null
+      },
+      "evidence": [],
+      "search_record": []
+    }
+  }
+}

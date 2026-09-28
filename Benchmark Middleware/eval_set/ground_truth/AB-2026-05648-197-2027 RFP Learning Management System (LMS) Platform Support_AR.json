@@ -1,0 +1,254 @@
+{
+  "document_id": "AB-2026-05648-197-2027 RFP Learning Management System (LMS) Platform  Support (2)",
+  "fields": {
+    "submission_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2026-09-09",
+        "time": "14:00",
+        "tz_raw": "MT"
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "questions_deadline": {
+      "status": "found",
+      "value": {
+        "date": "2026-09-02",
+        "time": "14:00",
+        "tz_raw": "MT"
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "rfp_contact": {
+      "status": "found",
+      "value": [
+        {
+          "name": null,
+          "email": "purchasing@oldscollege.ca",
+          "title": "قسم المشتريات في كلية أولدز",
+          "phone": null
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "submission_method": {
+      "status": "found",
+      "value": [
+        {
+          "method": "email",
+          "portal_name": null,
+          "url": "submissions@oldscollege.ca"
+        },
+        {
+          "method": "portal",
+          "portal_name": "بوابة ألبرتا للمشتريات (APC)",
+          "url": null
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "contract_term": {
+      "status": "found",
+      "value": {
+        "base_length": 5,
+        "base_unit": "years",
+        "renewals": [
+          {
+            "count": 2,
+            "length": 3,
+            "unit": "years"
+          }
+        ],
+        "total_max_years": 11
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "scope_of_deliverables": {
+      "status": "found",
+      "value": {
+        "summary": "تعزيز دعم طرف ثالث لنظام Moodle الحالي، أو نظام إدارة تعلّم جديد قائم على السحابة",
+        "key_deliverables": [
+          "تطوير المحتوى التعليمي وإدارته",
+          "التقييم ودفاتر الدرجات",
+          "المشاركة والتواصل",
+          "أدوات الذكاء الاصطناعي",
+          "دعم التقديم الحضوري وعبر الإنترنت والمدمج",
+          "أدوات النزاهة الأكاديمية",
+          "إمكانية الوصول (WCAG)",
+          "التعلّم عبر الأجهزة المحمولة",
+          "التكاملات (بما في ذلك Ellucian Banner وواجهات برمجة التطبيقات)",
+          "الأمان",
+          "ترحيل البيانات",
+          "الاستضافة السحابية",
+          "تحليل البيانات",
+          "دعم العملاء",
+          "التنفيذ والتدريب"
+        ]
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_submission_requirements": {
+      "status": "found",
+      "value": [
+        "يجب إكمال وثيقة شهادة العرض (القسم ج، البند 9) بالكامل وتوقيعها من قِبل مقدم العرض؛ وإلا رُفض العرض",
+        "يجب أن تكون المراجع مُرضية لكي يُعتبر العرض متوافقًا"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "mandatory_technical_requirements": {
+      "status": "found",
+      "value": [
+        "يجب أن يكون بمقدور مقدم العرض توفير تقييم HECVAT للأمن السيبراني والخصوصية",
+        "يجب التكامل مع Ellucian Banner (نظام معلومات الطلاب)"
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "evaluation_criteria": {
+      "status": "found",
+      "value": [
+        {
+          "criterion": "خبرة الشركة",
+          "weight": 15,
+          "unit": "points"
+        },
+        {
+          "criterion": "خبرة الموظفين/الموارد",
+          "weight": 5,
+          "unit": "points"
+        },
+        {
+          "criterion": "الحل والنهج المقترحان",
+          "weight": 40,
+          "unit": "points"
+        },
+        {
+          "criterion": "التسعير",
+          "weight": 40,
+          "unit": "points"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "minimum_score_threshold": {
+      "status": "not_stated",
+      "value": null,
+      "evidence": [],
+      "search_record": []
+    },
+    "pricing_structure": {
+      "status": "found",
+      "value": {
+        "pricing_model": "التسعير بالدولار الكندي، ثابت طوال مدة العقد البالغة 5 سنوات",
+        "submission_requirements": [
+          "جدول التسعير المفضَّل مع تكاليف التنفيذ أو التحسين لمرة واحدة (التدريب، ترحيل البيانات، إلخ)",
+          "اشتراك البرمجيات السنوي و/أو تكاليف الدعم المستمر للسنوات 1 إلى 5",
+          "تسعير منفصل لكل وحدة أو خيار",
+          "زائد ضريبة السلع والخدمات 5%"
+        ]
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "insurance_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "coverage_type": "المسؤولية العامة",
+          "amount": 5000000,
+          "currency": "CAD",
+          "basis": "per_occurrence"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "vendor_experience": {
+      "status": "found",
+      "value": [
+        {
+          "requirement_type": "خبرة الشركة",
+          "years": null,
+          "detail": "لا يوجد حد أدنى محدد للسنوات. تاريخ الشركة وسنوات تقديم السلع والخدمات المطلوبة، والخبرة في توفير أنظمة LMS ودعمها أو دعم نظام Moodle"
+        },
+        {
+          "requirement_type": "خبرة قطاعية",
+          "years": null,
+          "detail": "خبرة مع مؤسسات التعليم العالي، بما في ذلك تلك التي تستخدم Ellucian Banner"
+        },
+        {
+          "requirement_type": "مؤهلات الموظفين",
+          "years": null,
+          "detail": "خبرة الموظفين ومؤهلاتهم مع السير الذاتية"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "references_required": {
+      "status": "found",
+      "value": 3,
+      "evidence": [],
+      "search_record": []
+    },
+    "data_security_requirements": {
+      "status": "found",
+      "value": [
+        {
+          "standard": "POPA",
+          "detail": "الامتثال لقانون ألبرتا لحماية الخصوصية"
+        },
+        {
+          "standard": "ATIA",
+          "detail": "الامتثال لقانون الوصول إلى المعلومات"
+        },
+        {
+          "standard": "HECVAT",
+          "detail": "تقييم HECVAT للأمن السيبراني والخصوصية"
+        },
+        {
+          "standard": "تسجيل الدخول الموحد",
+          "detail": "تسجيل دخول موحد قائم على SAML"
+        },
+        {
+          "standard": "المصادقة متعددة العوامل",
+          "detail": "بيان ما إذا كانت المصادقة متعددة العوامل المحلية مدعومة أو تعتمد على تسجيل الدخول الموحد"
+        },
+        {
+          "standard": "معايير أمان البيانات",
+          "detail": "معايير أمان البيانات وضمانات ضد اختراقات البيانات"
+        }
+      ],
+      "evidence": [],
+      "search_record": []
+    },
+    "data_residency": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "location": "كندا (مُفضَّلة)",
+        "detail": "يُشترط منصة قائمة على السحابة (وليس محلية). تُفضَّل الاستضافة في موقع كندي"
+      },
+      "evidence": [],
+      "search_record": []
+    },
+    "demo_required": {
+      "status": "found",
+      "value": {
+        "required": true,
+        "stage": "تقييم طلب تقديم العروض (عروض توضيحية للمنتج ومقابلات الموردين)",
+        "detail": "عروض توضيحية للمنتج أثناء تقييمات طلب تقديم العروض (10 سبتمبر إلى 15 نوفمبر 2026) ومقابلات الموردين (15 سبتمبر إلى 15 نوفمبر 2026، أو يُحدَّد لاحقًا). ويجوز لكلية أولدز أيضًا طلب عروض تقديمية من مقدمي العروض المدرجين في القائمة المختصرة."
+      },
+      "evidence": [],
+      "search_record": []
+    }
+  }
+}
