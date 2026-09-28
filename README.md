@@ -18,7 +18,7 @@ trustworthy numbers.
 Three models, ten documents (five RFPs in English plus Arabic translations of the
 same five), seventeen fields per document.
 
-| Model | Serving | Lang | Accuracy | Hallucinations | Misses | Latency | Cost / 10 docs |
+| Model | Serving | Lang | Accuracy | Fabrications | Misses | Latency | Cost (5 docs) |
 |---|---|---|---|---|---|---|---|
 | **gpt-4o-mini** | OpenAI API | en | **0.550** | 0 | 15 | 19.6 s | $0.020 |
 | **gpt-4o-mini** | OpenAI API | ar | **0.477** | 0 | 11 | 23.7 s | $0.024 |
@@ -31,15 +31,16 @@ Runs `20260928_121819` (Llama + OpenAI) and `20260928_123403` (Qwen + OpenAI).
 
 ### What the numbers say
 
-**The commercial model leads, but not on English.** gpt-4o-mini's 0.058 advantage
-over Llama on English sits close to the measured run-to-run variance (below), so
-English performance is better described as comparable than as a win.
+**On English the three are closer than the table suggests.** gpt-4o-mini's 0.058
+advantage over Llama sits close to the measured run-to-run variance (below), so
+English performance is better described as comparable than as a clear win.
 
 **The two open-weight models are indistinguishable from each other.** Llama 0.492
 against Qwen 0.459 is a 0.033 gap — the same size as the noise. Neither can be
 recommended over the other on this evidence.
 
-**Arabic is where they separate.** Every model degrades, but by very different amounts:
+**Arabic is where they separate.** Every model degrades, but by very different
+amounts. Percentages are each model's loss relative to its own English score:
 
 ```
 gpt-4o-mini   0.550 -> 0.477    -13%
@@ -47,9 +48,10 @@ Llama         0.492 -> 0.295    -40%
 Qwen          0.459 -> 0.169    -63%
 ```
 
-**The most important finding is how the models fail, not how often.** gpt-4o-mini
-produced **zero hallucinations across twenty document-runs**. Llama produced 6 and
-Qwen 8. The pattern inverts on misses: gpt-4o-mini 26, Llama 7, Qwen 17. The
+**The most important finding is how the models fail, not how often.** Over the ten
+documents, gpt-4o-mini produced **zero fabrications** — and none in its second run
+either, so none across twenty document-runs. Llama produced 6 and Qwen 8. The
+pattern inverts on misses: gpt-4o-mini 26, Llama 7, Qwen 17. The
 commercial model answers "not stated" when it doesn't know; the self-hosted models
 invent a value. For a client checking an extracted RFP, a fabricated submission
 deadline is more damaging than a blank field they can look up.
@@ -139,6 +141,28 @@ Manifests are in `k8s/`. Both models are pinned to matched serving settings —
 4-bit AWQ, `--max-model-len=32768`, `--gpu-memory-utilization=0.90`, identical
 batching limits — so that differences between them reflect the models, not the
 configuration.
+
+**Measured footprint** (from each engine's startup log):
+
+| | Qwen2.5-7B-AWQ (vLLM 0.6.3) | Llama-3.1-8B-AWQ (vLLM 0.27.1) |
+|---|---|---|
+| Model weights | 5.20 GB | 5.39 GiB |
+| Peak activation | not reported by this version | 3.37 GiB |
+| CUDA graph memory | not reported | 0.13 GiB |
+| **Model footprint** | ~5.2 GB + activation | **~8.9 GiB** |
+| KV cache capacity | ~612,000 tokens (38,261 blocks) | 277,536 tokens |
+
+The cluster GPU has **47.5 GiB**, so at `--gpu-memory-utilization=0.90` vLLM allocates
+around 33.9 GiB to the KV cache. That allocation is a property of the card, not of the
+model: Llama's own footprint — weights, peak activation and CUDA graphs — is about
+8.9 GiB, comfortably inside the 16 GB budget the capstone guidance sets. On a 16 GB
+card the same model would load with a correspondingly smaller cache.
+
+Llama's KV cache holds under half as many tokens as Qwen's for the same memory, which
+follows from the architecture: 8 key-value heads across 32 layers against Qwen's 4
+across 28, roughly twice the cost per token. A single Arabic RFP (~30,000 tokens) is
+therefore a much larger share of Llama's cache than of Qwen's, which limits how many
+documents either model can serve concurrently.
 
 ### Monitoring
 
@@ -241,7 +265,8 @@ the last two matters: a misread is a different failure from an invention.
 
 ## Limitations
 
-**Small sample.** Five source RFPs, one run each per model. With measured variance of
+**Small sample.** Five source RFPs and their Arabic translations, one benchmark pass
+per self-hosted model (gpt-4o-mini ran in both passes). With measured variance of
 0.032, differences below ~0.05 are not meaningful.
 
 **The answer keys were drafted with a model and reviewed by a person.** They are not
@@ -254,9 +279,11 @@ mis-specified; its scores should be disregarded.
 
 **Scoring is strict on multi-part fields.** Free-text and list fields are compared by
 word overlap, and answers below a similarity threshold receive zero rather than
-partial credit. Relaxing both would raise gpt-4o-mini from 0.522 to 0.597, Llama from
-0.405 to 0.489 and Qwen from 0.314 to 0.410 — **leaving the ranking and the gaps
-essentially unchanged.** The conclusions do not depend on this choice.
+partial credit. Recomputing over the stored per-field records with both relaxations
+raises gpt-4o-mini from 0.522 to 0.597, Llama from 0.405 to 0.489 and Qwen from 0.314
+to 0.410 — **leaving the ranking and the gaps essentially unchanged.** (Those baselines
+are per-field means over `data/results/`, so they differ slightly from the run-level
+figures in the table above.) The conclusions do not depend on this choice.
 
 **Arabic documents are machine-translated**, not native Arabic RFPs, and PDF text
 extraction degrades Arabic — dates and numbers get joined to adjacent words and split
@@ -278,7 +305,7 @@ GPU on the team cluster; gpt-4o-mini runs on OpenAI's infrastructure.
 |---|---|
 | `Benchmark Middleware/` | FastAPI service: extraction, scoring, benchmark runner |
 | `frontend/` | Streamlit app |
-| `k8s/` | Deployment manifests for both models, and Prometheus |
+| `k8s/` | Deployment manifests for both models, Prometheus, and the Grafana dashboard |
 | `ground_truth/` | Annotation guideline, template, and inter-annotator agreement script |
 | `reports/` | Load-test output |
 | `locustfile.py` | Load-test definition |
