@@ -1,0 +1,21 @@
+run_id,doc_id,language,model,status,valid_json,accuracy,hallucinations,misses,latency_s,input_tokens,output_tokens,cost_usd,error
+run_20260928_123403,AB-2025-02456-RFP #25-004ERP Requirements Analysis and Readiness Review_Final (1),en,model_b,ok,True,0.559,0,3,18.921,21681,1640,0.004236,
+run_20260928_123403,AB-2025-02456-RFP #25-004ERP Requirements Analysis and Readiness Review_Final (1),en,model_c,ok,True,0.314,3,0,49.293,20241,3548,0.0,
+run_20260928_123403,AB-2025-02456-RFP 25-004 ERP Requirements Analysis and Readiness Review_AR,ar,model_b,ok,True,0.49,0,4,19.209,27576,1588,0.005089,
+run_20260928_123403,AB-2025-02456-RFP 25-004 ERP Requirements Analysis and Readiness Review_AR,ar,model_c,ok,True,0.152,2,1,43.449,29876,2763,0.0,
+run_20260928_123403,AB-2026-05648-197-2027 RFP Learning Management System (LMS) Platform  Support (2),en,model_b,ok,True,0.422,0,5,17.614,21607,1538,0.004164,
+run_20260928_123403,AB-2026-05648-197-2027 RFP Learning Management System (LMS) Platform  Support (2),en,model_c,error,False,,,,54.524,20444,4000,0.0,Answer cut off: hit the max_tokens limit
+run_20260928_123403,AB-2026-05648-197-2027 RFP Learning Management System (LMS) Platform Support_AR,ar,model_b,ok,True,0.373,0,7,19.68,28325,1757,0.005303,
+run_20260928_123403,AB-2026-05648-197-2027 RFP Learning Management System (LMS) Platform Support_AR,ar,model_c,error,False,,,,40.333,30262,2442,0.0,Answer cut off: hit the max_tokens limit
+run_20260928_123403,City of Medicine Hat - LMS tender,en,model_b,ok,True,0.586,0,0,17.656,17336,1566,0.00354,
+run_20260928_123403,City of Medicine Hat - LMS tender,en,model_c,ok,True,0.397,0,2,39.0,15820,2917,0.0,
+run_20260928_123403,City of Medicine Hat - LMS tender_AR,ar,model_b,ok,True,0.393,0,0,22.48,20723,2139,0.004392,
+run_20260928_123403,City of Medicine Hat - LMS tender_AR,ar,model_c,ok,True,0.084,0,4,37.666,21529,2545,0.0,
+run_20260928_123403,EN_-_ERP_RFP_24.25.04,en,model_b,ok,True,0.665,0,1,27.133,15995,1880,0.003527,
+run_20260928_123403,EN_-_ERP_RFP_24.25.04,en,model_c,ok,True,0.717,1,0,33.496,14251,2512,0.0,
+run_20260928_123403,EN_-_ERP_RFP_24.25.04_AR,ar,model_b,ok,True,0.645,0,0,22.581,19918,2195,0.004305,
+run_20260928_123403,EN_-_ERP_RFP_24.25.04_AR,ar,model_c,ok,True,0.229,1,3,31.005,20924,2009,0.0,
+run_20260928_123403,RFP CP-730126 Generative AI RFP (4),en,model_b,ok,True,0.555,0,3,19.562,20375,1731,0.004095,
+run_20260928_123403,RFP CP-730126 Generative AI RFP (4),en,model_c,ok,True,0.408,0,5,31.029,19090,2137,0.0,
+run_20260928_123403,RFP CP-730126 Generative AI RFP_AR,ar,model_b,ok,True,0.392,0,2,20.579,24689,1749,0.004753,
+run_20260928_123403,RFP CP-730126 Generative AI RFP_AR,ar,model_c,ok,True,0.211,1,2,46.413,26188,3086,0.0,
