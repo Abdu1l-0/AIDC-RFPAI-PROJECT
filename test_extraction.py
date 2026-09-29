@@ -132,7 +132,7 @@ def main():
     parser.add_argument("--host", default="localhost", help="Model host (default: localhost)")
     parser.add_argument("--port", type=int, default=8031, help="Port-forwarded port (8031=Qwen, 8032=Llama)")
     parser.add_argument("--model", required=True, help="Exact model id, e.g. Qwen/Qwen2.5-7B-Instruct-AWQ")
-    parser.add_argument("--api-key", default="96559b7ff96a1482e8ba0f6985577896", help="Bearer key")
+    parser.add_argument("--api-key", help="Bearer key")
     parser.add_argument("--save-output", default=None, help="Optional path to save parsed JSON output")
     args = parser.parse_args()
 
